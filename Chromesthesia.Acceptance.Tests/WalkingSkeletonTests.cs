@@ -10,7 +10,7 @@ namespace Chromesthesia.Acceptance.Tests
         [Test]
         public void Test_number_1984()
         {
-            Assert.That(2 + 2, Is.EqualTo(5));
+            Assert.That(2 + 2, Is.Not.EqualTo(5));
         }
 
         [Ignore]
