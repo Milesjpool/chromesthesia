@@ -10,6 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3B8AF9
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chromesthesia.Integration.Tests", "Chromesthesia.Integration.Tests\Chromesthesia.Integration.Tests.csproj", "{D6C87036-78C0-4E76-96B8-A270F10F2149}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chromesthesia.WebApp", "Chromesthesia.WebApp\Chromesthesia.WebApp.csproj", "{35F08708-4BCD-451B-B204-37C6D18CC28A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +24,14 @@ Global
 		{863D9170-D775-4A89-8B03-2E7F7FCD1D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{863D9170-D775-4A89-8B03-2E7F7FCD1D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{863D9170-D775-4A89-8B03-2E7F7FCD1D41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6C87036-78C0-4E76-96B8-A270F10F2149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C87036-78C0-4E76-96B8-A270F10F2149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6C87036-78C0-4E76-96B8-A270F10F2149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6C87036-78C0-4E76-96B8-A270F10F2149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35F08708-4BCD-451B-B204-37C6D18CC28A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F08708-4BCD-451B-B204-37C6D18CC28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F08708-4BCD-451B-B204-37C6D18CC28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F08708-4BCD-451B-B204-37C6D18CC28A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
