@@ -1,6 +1,4 @@
-﻿using System.Configuration;
-using System.Diagnostics;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Chromesthesia.Acceptance.Tests
 {
