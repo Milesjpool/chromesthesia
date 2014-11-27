@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using NUnit.Framework;
 using Nancy;
 
 namespace Chromesthesia.WebApp
@@ -37,7 +36,7 @@ namespace Chromesthesia.WebApp
         {
             using (var responseStream = response.GetResponseStream())
             {
-                Assert.IsNotNull(responseStream, "Response stream");
+                if (responseStream == null) throw new ArgumentException("No response");
                 using (var streamReader = new StreamReader(responseStream))
                 {
                     return streamReader.ReadToEnd();
