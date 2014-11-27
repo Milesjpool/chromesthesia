@@ -58,7 +58,6 @@
     <Compile Include="WalkingSkeletonSteps.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="config\App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
