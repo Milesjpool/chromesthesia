@@ -6,7 +6,7 @@ namespace Chromesthesia.WebInterface
     {
         public Routes()
         {
-            var renderer = new Renderer();
+            var renderer = new PageRenderer();
             Get["/"] = _ => renderer.RenderHomepage();
             Get["/chrometise/mbid/{id}"] = parameters =>
                     renderer.RenderChrometiseMbidPage(parameters);

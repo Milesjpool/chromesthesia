@@ -80,7 +80,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Renderer.cs" />
+    <Compile Include="PageRenderer.cs" />
     <Compile Include="Routes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

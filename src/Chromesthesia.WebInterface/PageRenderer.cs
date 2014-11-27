@@ -1,6 +1,8 @@
-﻿namespace Chromesthesia.WebInterface
+﻿using Chromesthesia.WebApi;
+
+namespace Chromesthesia.WebInterface
 {
-    public class Renderer
+    public class PageRenderer
     {
         public string RenderHomepage()
         {

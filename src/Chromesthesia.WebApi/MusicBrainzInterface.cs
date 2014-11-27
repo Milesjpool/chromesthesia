@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Chromesthesia.WebInterface
+namespace Chromesthesia.WebApi
 {
     public static class MusicBrainzInterface
     {
