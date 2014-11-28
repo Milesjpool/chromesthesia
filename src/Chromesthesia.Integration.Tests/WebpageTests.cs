@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Configuration;
 using NUnit.Framework;
 
 namespace Chromesthesia.Integration.Tests
@@ -10,7 +11,8 @@ namespace Chromesthesia.Integration.Tests
         [Test]
         public void Gets_okay_status_from_webserver()
         {
-            var rootUrl = new Uri("http://localhost:50249/");
+            var urlString = ConfigurationManager.AppSettings["RootUrl"];
+            var rootUrl = new Uri(urlString);
             var request = WebRequest.Create(rootUrl);
             var response = (HttpWebResponse)request.GetResponse();
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
