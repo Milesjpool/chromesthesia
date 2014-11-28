@@ -1,5 +1,4 @@
-﻿using Chromesthesia.Api;
-
+﻿
 namespace Chromesthesia.WebInterface
 {
     public class PageRenderer

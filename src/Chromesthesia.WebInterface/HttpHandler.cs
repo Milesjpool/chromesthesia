@@ -2,7 +2,7 @@
 using System.IO;
 using System.Net;
 
-namespace Chromesthesia.Api
+namespace Chromesthesia.WebInterface
 {
     public class HttpHandler
     {
