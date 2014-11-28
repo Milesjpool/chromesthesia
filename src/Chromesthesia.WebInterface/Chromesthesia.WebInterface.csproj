@@ -91,9 +91,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Chromesthesia.WebApi\Chromesthesia.WebApi.csproj">
-      <Project>{68A9B504-9045-4B40-9C8D-E35D2C9505AC}</Project>
-      <Name>Chromesthesia.WebApi</Name>
+    <ProjectReference Include="..\Chromesthesia.Api\Chromesthesia.Api.csproj">
+      <Project>{E339ADF0-C8D7-4BE8-9C97-8755BDF7DF64}</Project>
+      <Name>Chromesthesia.Api</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

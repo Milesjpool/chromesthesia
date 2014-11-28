@@ -1,4 +1,4 @@
-﻿using Chromesthesia.WebApi;
+﻿using Chromesthesia.Api;
 
 namespace Chromesthesia.WebInterface
 {
