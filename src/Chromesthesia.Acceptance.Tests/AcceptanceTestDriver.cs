@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Net;
+using System.Text.RegularExpressions;
 using NUnit.Framework;
 
 namespace Chromesthesia.Acceptance.Tests
@@ -20,9 +21,19 @@ namespace Chromesthesia.Acceptance.Tests
 
         public void NavigateToChrometiseMbid(string mbid)
         {
-            var mbidUrl = new Uri(_rootUrl + "chrometise/mbid/" + mbid);
+            GetMbidAnalysisResult("chrometise", mbid);
+        }
 
-            _response = Browser.Get(mbidUrl);
+        public void NavigateToAnalyseMbid(string mbid)
+        {
+            GetMbidAnalysisResult("analyse", mbid);
+        }
+
+        private void GetMbidAnalysisResult(string resultType, string mbid)
+        {
+            var url = new Uri(_rootUrl + resultType + "/mbid/" + mbid);
+
+            _response = Browser.Get(url);
             _body = Browser.ReadBodyOf(_response);
             Browser.Log(_response, _body);
         }
@@ -35,6 +46,12 @@ namespace Chromesthesia.Acceptance.Tests
         public void CheckResponseContains(string expectedString)
         {
             Assert.That(_body, Is.StringContaining(expectedString));
+        }
+
+        public void CheckResponseContainsHexCode()
+        {
+            string hexPattern = "\'#[A-Fa-f0-9]{6}\'";
+            Assert.True(Regex.IsMatch(_body, hexPattern));
         }
     }
 }

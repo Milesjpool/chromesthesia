@@ -13,11 +13,18 @@ namespace Chromesthesia.Acceptance.Tests
             And_the_webpage_should_contain_chromesthesia();
         }
 
-        [TestCase("f989fa05-7e2b-4e88-8a95-b5d68480b539", 167.186660767)]
-        public void Chrometise_page_should_display_length_of_song_with_musicbrainz_id(string mbid, double expectedLength)
+        [Test]
+        public void Analyse_page_should_display_the_length_of_a_song()
         {
-            When_I_navigate_to_the_chometise_page_for_musicbrainz_id(mbid);
-            Then_the_webpage_should_contain(expectedLength);
+            When_I_navigate_to_the_analyse_page_for_a_valid_musicbrainz_id();
+            Then_the_webpage_should_contain_the_expected_length();
+        }
+
+        [Test]
+        public void Chrometise_page_should_display_a_colour_for_musicbrainz_id()
+        {
+            When_I_navigate_to_the_chrometise_page_for_a_valid_musicbrainz_id();
+            Then_the_webpage_should_contain_a_valid_hex_code();
         }
     }
 }

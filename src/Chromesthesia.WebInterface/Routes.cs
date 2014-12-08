@@ -10,6 +10,8 @@ namespace Chromesthesia.WebInterface
             Get["/"] = _ => renderer.RenderHomepage();
             Get["/chrometise/mbid/{id}"] = parameters =>
                     renderer.RenderChrometiseMbidPage(parameters);
+            Get["/analyse/mbid/{id}"] = parameters =>
+                    renderer.RenderAnalyseMbidPage(parameters);
         }
     }
 }
