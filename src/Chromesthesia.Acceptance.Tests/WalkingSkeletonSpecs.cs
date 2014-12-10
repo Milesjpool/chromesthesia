@@ -14,6 +14,14 @@ namespace Chromesthesia.Acceptance.Tests
         }
 
         [Test]
+        public void Status_page_should_display_required_info()
+        {
+            When_I_navigate_to_the_status_page();
+            Then_the_page_should_display_a_200_status_code();
+            And_the_page_should_contain_a_version_number();
+        }
+
+        [Test]
         public void Analyse_page_should_display_the_length_of_a_song()
         {
             When_I_navigate_to_the_analyse_page_for_a_valid_musicbrainz_id();

@@ -19,6 +19,11 @@ namespace Chromesthesia.Acceptance.Tests
             _driver.NavigateToRoot();
         }
 
+        protected void When_I_navigate_to_the_status_page()
+        {
+            _driver.NavigateToStatusPage(); ;
+        }
+
         protected void When_I_navigate_to_the_analyse_page_for_a_valid_musicbrainz_id()
         {
             _driver.NavigateToAnalyseMbid(ValidMbid);
@@ -34,6 +39,16 @@ namespace Chromesthesia.Acceptance.Tests
             _driver.CheckWebpageIsOkay();
         }
 
+        protected void Then_the_page_should_display_a_200_status_code()
+        {
+            _driver.CheckResponseContains("status: 200 (OK)");
+        }
+
+        protected void And_the_page_should_contain_a_version_number()
+        {
+            _driver.CheckResponseMatchesRegex(@"version: [0-9]+.[0-9]+.[0-9]+.[0-9]+");
+        }
+
         protected void And_the_webpage_should_contain_chromesthesia()
         {
             _driver.CheckResponseContains("Chromesthesia");
@@ -46,7 +61,7 @@ namespace Chromesthesia.Acceptance.Tests
 
         protected void Then_the_webpage_should_contain_a_valid_hex_code()
         {
-            _driver.CheckResponseContainsHexCode();
+            _driver.CheckResponseMatchesRegex("\'#[A-Fa-f0-9]{6}\'");
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿
+using System.Reflection;
+
 namespace Chromesthesia.WebInterface
 {
     public class PageRenderer
@@ -21,6 +23,21 @@ namespace Chromesthesia.WebInterface
         {
             var mbid = parameters.id;
             return MusicBrainzInterface.GetHighLevelAnalysisOfMbid(mbid);
+        }
+
+
+        public string RenderStatusPage()
+        {
+            return string.Format("<h1>Chromesthesia</h1>" +
+                                 "version: {0} <p/>" +
+                                 "status: 200 (OK)",
+                                    GetAssemblyVersion()
+                                 );
+        }
+
+        private string GetAssemblyVersion()
+        {
+            return Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
     }
 }

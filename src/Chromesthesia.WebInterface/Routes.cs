@@ -12,6 +12,8 @@ namespace Chromesthesia.WebInterface
                     renderer.RenderChrometiseMbidPage(parameters);
             Get["/analyse/mbid/{id}"] = parameters =>
                     renderer.RenderAnalyseMbidPage(parameters);
+            Get["/status"] = _ =>
+                    renderer.RenderStatusPage();
         }
     }
 }

@@ -10,29 +10,31 @@ namespace Chromesthesia.Acceptance.Tests
     {
         private HttpWebResponse _response;
         private string _body;
+
         private readonly string _rootUrl = ConfigurationManager.AppSettings["RootUrl"];
 
         public void NavigateToRoot()
         {
-            _response = Browser.Get(new Uri(_rootUrl));
-            _body = Browser.ReadBodyOf(_response);
-            Browser.Log(_response, _body);
+            GetPageResponse(new Uri(_rootUrl));
+        }
+
+        public void NavigateToStatusPage()
+        {
+            GetPageResponse(new Uri(_rootUrl + "status"));
         }
 
         public void NavigateToChrometiseMbid(string mbid)
         {
-            GetMbidAnalysisResult("chrometise", mbid);
+            GetPageResponse(new Uri(_rootUrl + "chrometise/mbid/" + mbid));
         }
 
         public void NavigateToAnalyseMbid(string mbid)
         {
-            GetMbidAnalysisResult("analyse", mbid);
+            GetPageResponse(new Uri(_rootUrl + "analyse/mbid/" + mbid));
         }
 
-        private void GetMbidAnalysisResult(string resultType, string mbid)
+        private void GetPageResponse(Uri url)
         {
-            var url = new Uri(_rootUrl + resultType + "/mbid/" + mbid);
-
             _response = Browser.Get(url);
             _body = Browser.ReadBodyOf(_response);
             Browser.Log(_response, _body);
@@ -48,10 +50,9 @@ namespace Chromesthesia.Acceptance.Tests
             Assert.That(_body, Is.StringContaining(expectedString));
         }
 
-        public void CheckResponseContainsHexCode()
+        public void CheckResponseMatchesRegex(string regexPattern)
         {
-            string hexPattern = "\'#[A-Fa-f0-9]{6}\'";
-            Assert.True(Regex.IsMatch(_body, hexPattern));
+            Assert.True(Regex.IsMatch(_body, regexPattern));
         }
     }
 }
