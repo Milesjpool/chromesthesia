@@ -52,6 +52,7 @@ namespace Chromesthesia.Acceptance.Tests
 
         public void CheckResponseMatchesRegex(string regexPattern)
         {
+            Console.WriteLine("Regex pattern to match: " + regexPattern);
             Assert.True(Regex.IsMatch(_body, regexPattern));
         }
     }

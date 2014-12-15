@@ -11,6 +11,7 @@ namespace Chromesthesia.Acceptance.Tests
             When_I_navigate_to_the_website_url();
             Then_the_webpage_should_be_available();
             And_the_webpage_should_contain_chromesthesia();
+            And_the_webpage_should_contain_an_example_chrometise_link();
         }
 
         [Test]

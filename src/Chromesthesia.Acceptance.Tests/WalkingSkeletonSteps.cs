@@ -6,7 +6,7 @@ namespace Chromesthesia.Acceptance.Tests
     {
         private AcceptanceTestDriver _driver;
         private const string ValidMbid = "f989fa05-7e2b-4e88-8a95-b5d68480b539";
-        private const string ExpectedLength = "167.186660767";
+        private const string ExpectedLength = "167.18";
 
         [TestFixtureSetUp]
         public void Setup()
@@ -46,12 +46,20 @@ namespace Chromesthesia.Acceptance.Tests
 
         protected void And_the_page_should_contain_a_version_number()
         {
-            _driver.CheckResponseMatchesRegex(@"version: [0-9]+.[0-9]+.[0-9]+.[0-9]+");
+            var versionNumberRegex = @"version: [0-9]+.[0-9]+.[0-9]+.[0-9]+";
+            _driver.CheckResponseMatchesRegex(versionNumberRegex);
         }
 
         protected void And_the_webpage_should_contain_chromesthesia()
         {
             _driver.CheckResponseContains("Chromesthesia");
+        }
+
+        protected void And_the_webpage_should_contain_an_example_chrometise_link()
+        {
+            const string relativeUrl = "/chrometise/mbid/" + ValidMbid;
+            const string chrometiseLinkRegex = "Chrometise MBID: <a href='" + relativeUrl + "'>" + ValidMbid + "</a>";
+            _driver.CheckResponseMatchesRegex(chrometiseLinkRegex);
         }
 
         protected void Then_the_webpage_should_contain_the_expected_length()
@@ -61,7 +69,8 @@ namespace Chromesthesia.Acceptance.Tests
 
         protected void Then_the_webpage_should_contain_a_valid_hex_code()
         {
-            _driver.CheckResponseMatchesRegex("\'#[A-Fa-f0-9]{6}\'");
+            var hexCodeRegex = "\'#[A-Fa-f0-9]{6}\'";
+            _driver.CheckResponseMatchesRegex(hexCodeRegex);
         }
     }
 }

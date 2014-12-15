@@ -8,12 +8,9 @@ namespace Chromesthesia.WebInterface
         {
             var renderer = new PageRenderer();
             Get["/"] = _ => renderer.RenderHomepage();
-            Get["/chrometise/mbid/{id}"] = parameters =>
-                    renderer.RenderChrometiseMbidPage(parameters);
-            Get["/analyse/mbid/{id}"] = parameters =>
-                    renderer.RenderAnalyseMbidPage(parameters);
-            Get["/status"] = _ =>
-                    renderer.RenderStatusPage();
+            Get["/status"] = _ => renderer.RenderStatusPage();
+            Get["/analyse/mbid/{id}"] = parameters => renderer.RenderAnalyseMbidPage(parameters);
+            Get["/chrometise/mbid/{id}"] = parameters => renderer.RenderChrometiseMbidPage(parameters);
         }
     }
 }
