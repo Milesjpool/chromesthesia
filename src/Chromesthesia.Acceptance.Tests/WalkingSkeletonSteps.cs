@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 namespace Chromesthesia.Acceptance.Tests
 {
@@ -39,15 +40,27 @@ namespace Chromesthesia.Acceptance.Tests
             _driver.CheckWebpageIsOkay();
         }
 
-        protected void Then_the_page_should_display_a_200_status_code()
+        protected void Then_the_page_should_display_the_server_time()
         {
-            _driver.CheckResponseContains("status: 200 (OK)");
+            var dateString = DateTime.Today.ToString("dd/MM/yyyy");
+            var expected = "Server Time: " + dateString;
+            _driver.CheckResponseContains(expected);
         }
 
         protected void And_the_page_should_contain_a_version_number()
         {
-            var versionNumberRegex = @"version: [0-9]+.[0-9]+.[0-9]+.[0-9]+";
+            var versionNumberRegex = @"Version: [0-9]+.[0-9]+.[0-9]+.[0-9]+";
             _driver.CheckResponseMatchesRegex(versionNumberRegex);
+        }
+
+        protected void And_the_page_should_display_a_200_status_code()
+        {
+            _driver.CheckResponseContains("Chromesthesia Status: 200 (OK)");
+        }
+
+        protected void And_the_page_should_display_acousticbrainz_status()
+        {
+            _driver.CheckResponseContains("Acousticbrainz Status: 200 (OK)");
         }
 
         protected void And_the_webpage_should_contain_chromesthesia()

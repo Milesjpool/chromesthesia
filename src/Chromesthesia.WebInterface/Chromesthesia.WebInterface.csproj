@@ -78,10 +78,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HttpHandler.cs" />
+    <Compile Include="WebPage.cs" />
     <Compile Include="MusicBrainzInterface.cs" />
     <Compile Include="PageRenderer.cs" />
     <Compile Include="Routes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatusPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

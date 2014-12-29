@@ -1,10 +1,14 @@
 ﻿
+using System;
+using System.Configuration;
 using System.Reflection;
+using System.Text;
 
 namespace Chromesthesia.WebInterface
 {
     public class PageRenderer
     {
+
         public string RenderHomepage()
         {
             return "<h1>Welcome to Chromesthesia!</h1>" +
@@ -27,21 +31,6 @@ namespace Chromesthesia.WebInterface
         {
             var mbid = parameters.id;
             return MusicBrainzInterface.GetHighLevelAnalysisOfMbid(mbid);
-        }
-
-
-        public string RenderStatusPage()
-        {
-            return string.Format("<h1>Chromesthesia</h1>" +
-                                 "version: {0} <p/>" +
-                                 "status: 200 (OK)",
-                                    GetAssemblyVersion()
-                                 );
-        }
-
-        private string GetAssemblyVersion()
-        {
-            return Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
     }
 }
