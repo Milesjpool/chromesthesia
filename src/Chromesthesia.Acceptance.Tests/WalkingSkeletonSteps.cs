@@ -57,9 +57,10 @@ namespace Chromesthesia.Acceptance.Tests
             _driver.CheckResponseMatchesRegex(versionNumberRegex);
         }
 
-        protected void And_the_page_should_display_a_200_status_code()
+        protected void And_the_page_should_display_a_machine_name()
         {
-            _driver.CheckResponseContains("Chromesthesia Status: 200 (OK)");
+            var machineNameRegex = "Machine Name: .+ <p/>";
+            _driver.CheckResponseMatchesRegex(machineNameRegex);
         }
 
         protected void And_the_page_should_display_acousticbrainz_status()
