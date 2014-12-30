@@ -10,8 +10,12 @@ namespace Chromesthesia.Acceptance.Tests
     {
         private HttpWebResponse _response;
         private string _body;
+        private readonly string _rootUrl;
 
-        private readonly string _rootUrl = ConfigurationManager.AppSettings["RootUrl"];
+        public AcceptanceTestDriver()
+        {
+            _rootUrl = ConfigurationManager.AppSettings["RootUrl"];    
+        }
 
         public void NavigateToRoot()
         {
@@ -31,6 +35,11 @@ namespace Chromesthesia.Acceptance.Tests
         public void NavigateToAnalyseMbid(string mbid)
         {
             GetPageResponse(new Uri(_rootUrl + "analyse/mbid/" + mbid));
+        }
+
+        public void NavigateToSurveyPage()
+        {
+            GetPageResponse(new Uri(_rootUrl + "survey/"));
         }
 
         private void GetPageResponse(Uri url)

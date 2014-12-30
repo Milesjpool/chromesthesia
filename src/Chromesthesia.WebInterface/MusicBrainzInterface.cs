@@ -4,7 +4,7 @@ namespace Chromesthesia.WebInterface
 {
     public static class MusicBrainzInterface
     {
-        public static string GetHighLevelAnalysisOfMbid(string mbid)
+        public static string GetHighLevelAnalysisOfMbid(Guid mbid)
         {
             var httpHandler = new HttpHandler();
             var acousticBrainzResponse = httpHandler.Get(new Uri("http://acousticbrainz.org/" + mbid + "/high-level"));

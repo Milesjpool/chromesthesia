@@ -63,12 +63,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Browser.cs" />
-    <Compile Include="AcceptanceTestDriver.cs" />
-    <Compile Include="Track.cs" />
-    <Compile Include="WalkingSkeletonSpecs.cs" />
+    <Compile Include="Code\Browser.cs" />
+    <Compile Include="Code\AcceptanceTestDriver.cs" />
+    <Compile Include="Specs\Survey\SurveyUiSpecs.cs" />
+    <Compile Include="Specs\Survey\SurveyUiSteps.cs" />
+    <Compile Include="Code\Track.cs" />
+    <Compile Include="Specs\Walking Skeleton\WalkingSkeletonSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WalkingSkeletonSteps.cs" />
+    <Compile Include="Specs\Walking Skeleton\WalkingSkeletonSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

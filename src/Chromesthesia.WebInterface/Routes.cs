@@ -1,5 +1,8 @@
-﻿using Chromesthesia.WebInterface.Pages;
+﻿using System;
+using Chromesthesia.WebInterface.Pages;
+using Chromesthesia.Survey;
 using Nancy;
+using Nancy.Routing;
 
 namespace Chromesthesia.WebInterface
 {
@@ -11,6 +14,7 @@ namespace Chromesthesia.WebInterface
             Get["/status"] = _ => new StatusPage().Render();
             Get["/analyse/mbid/{id}"] = parameters => new AnalysePage(parameters).Render();
             Get["/chrometise/mbid/{id}"] = parameters => new ChrometisePage(parameters).Render();
+            Get["/survey"] = _ => new SurveyPage().Render();
         }
     }
 }

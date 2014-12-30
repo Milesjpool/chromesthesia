@@ -1,12 +1,15 @@
+using System;
+
 namespace Chromesthesia.WebInterface.Pages
 {
     public class ChrometisePage : IWebPage
     {
-        private dynamic _mbid;
+        private Guid _mbid;
+        private bool _validMbid;
 
         public ChrometisePage(dynamic parameters)
         {
-            _mbid = parameters.id;            
+            _validMbid = Guid.TryParse(parameters.id, out _mbid);            
         }
 
         public string Render()
