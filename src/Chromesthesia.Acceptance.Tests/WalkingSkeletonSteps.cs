@@ -6,13 +6,17 @@ namespace Chromesthesia.Acceptance.Tests
     public class WalkingSkeletonSteps
     {
         private AcceptanceTestDriver _driver;
-        private const string ValidMbid = "f989fa05-7e2b-4e88-8a95-b5d68480b539";
-        private const string ExpectedLength = "167.18";
+        private Track _track;
 
         [TestFixtureSetUp]
         public void Setup()
         {
             _driver = new AcceptanceTestDriver();
+            _track = new Track
+            {
+                Mbid = "f989fa05-7e2b-4e88-8a95-b5d68480b539",
+                Title = "9 to 5"
+            };
         }
 
         protected void When_I_navigate_to_the_website_url()
@@ -27,12 +31,12 @@ namespace Chromesthesia.Acceptance.Tests
 
         protected void When_I_navigate_to_the_analyse_page_for_a_valid_musicbrainz_id()
         {
-            _driver.NavigateToAnalyseMbid(ValidMbid);
+            _driver.NavigateToAnalyseMbid(_track.Mbid);
         }
 
         protected void When_I_navigate_to_the_chrometise_page_for_a_valid_musicbrainz_id()
         {
-            _driver.NavigateToChrometiseMbid(ValidMbid);
+            _driver.NavigateToChrometiseMbid(_track.Mbid);
         }
 
         protected void Then_the_webpage_should_be_available()
@@ -60,7 +64,8 @@ namespace Chromesthesia.Acceptance.Tests
 
         protected void And_the_page_should_display_acousticbrainz_status()
         {
-            _driver.CheckResponseContains("Acousticbrainz Status: 200 (OK)");
+            var acousticbrainsStatus = "Acousticbrainz Status: [0-9]{3} \\([a-zA-Z]+\\)";
+            _driver.CheckResponseMatchesRegex(acousticbrainsStatus);
         }
 
         protected void And_the_webpage_should_contain_chromesthesia()
@@ -70,14 +75,16 @@ namespace Chromesthesia.Acceptance.Tests
 
         protected void And_the_webpage_should_contain_an_example_chrometise_link()
         {
-            const string relativeUrl = "/chrometise/mbid/" + ValidMbid;
-            const string chrometiseLinkRegex = "Chrometise MBID: <a href='" + relativeUrl + "'>" + ValidMbid + "</a>";
+            var relativeUrl = "/chrometise/mbid/" + _track.Mbid;
+            var chrometiseLinkRegex = "Chrometise MBID: <a href='" + relativeUrl + "'>" + _track.Mbid + "</a>";
             _driver.CheckResponseMatchesRegex(chrometiseLinkRegex);
         }
 
-        protected void Then_the_webpage_should_contain_the_expected_length()
+        protected void Then_the_webpage_should_contain_the_expected_details()
         {
-            _driver.CheckResponseContains(ExpectedLength);
+            _driver.CheckResponseContains(_track.Title);
+            var trackLength = "\"length\":[0-9]+\\.[0-9]{9},";
+            _driver.CheckResponseMatchesRegex(trackLength);
         }
 
         protected void Then_the_webpage_should_contain_a_valid_hex_code()

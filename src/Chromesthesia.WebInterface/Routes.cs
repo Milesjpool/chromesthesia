@@ -1,4 +1,5 @@
-﻿using Nancy;
+﻿using Chromesthesia.WebInterface.Pages;
+using Nancy;
 
 namespace Chromesthesia.WebInterface
 {
@@ -6,11 +7,10 @@ namespace Chromesthesia.WebInterface
     {
         public Routes()
         {
-            var renderer = new PageRenderer();
-            Get["/"] = _ => renderer.RenderHomepage();
+            Get["/"] = _ => new Homepage().Render();
             Get["/status"] = _ => new StatusPage().Render();
-            Get["/analyse/mbid/{id}"] = parameters => renderer.RenderAnalyseMbidPage(parameters);
-            Get["/chrometise/mbid/{id}"] = parameters => renderer.RenderChrometiseMbidPage(parameters);
+            Get["/analyse/mbid/{id}"] = parameters => new AnalysePage(parameters).Render();
+            Get["/chrometise/mbid/{id}"] = parameters => new ChrometisePage(parameters).Render();
         }
     }
 }

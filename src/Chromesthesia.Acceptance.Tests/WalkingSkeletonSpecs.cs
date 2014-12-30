@@ -25,10 +25,10 @@ namespace Chromesthesia.Acceptance.Tests
         }
         
         [Test]
-        public void Analyse_page_should_display_the_length_of_a_song()
+        public void Analyse_page_should_display_the_details_of_a_song()
         {
             When_I_navigate_to_the_analyse_page_for_a_valid_musicbrainz_id();
-            Then_the_webpage_should_contain_the_expected_length();
+            Then_the_webpage_should_contain_the_expected_details();
         }
 
         [Test]

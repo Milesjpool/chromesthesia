@@ -1,4 +1,4 @@
-﻿namespace Chromesthesia.WebInterface
+namespace Chromesthesia.WebInterface.Pages
 {
     public interface IWebPage
     {

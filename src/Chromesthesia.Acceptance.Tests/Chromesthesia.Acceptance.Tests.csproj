@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Browser.cs" />
     <Compile Include="AcceptanceTestDriver.cs" />
+    <Compile Include="Track.cs" />
     <Compile Include="WalkingSkeletonSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WalkingSkeletonSteps.cs" />
