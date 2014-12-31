@@ -1,6 +1,8 @@
+using System.Web;
+
 namespace Chromesthesia.WebInterface.Pages
 {
-    public class Homepage : IWebPage
+    public class Homepage : IWebPage<string>
     {
         public string Render()
         {

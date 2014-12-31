@@ -2,10 +2,11 @@ using System;
 using System.Configuration;
 using System.Reflection;
 using System.Text;
+using System.Web;
 
 namespace Chromesthesia.WebInterface.Pages
 {
-    public class StatusPage : IWebPage
+    public class StatusPage : IWebPage<string>
     {
 
         public string Render()

@@ -2,7 +2,7 @@ using System;
 
 namespace Chromesthesia.WebInterface.Pages
 {
-    public class AnalysePage : IWebPage
+    public class AnalysePage : IWebPage<string>
     {
         private readonly Guid _mbid;
         private bool _validMbid;

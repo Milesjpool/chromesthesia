@@ -77,6 +77,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\SurveyStyle.css" />
+    <Content Include="Pages\SurveyPage.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -85,10 +87,11 @@
     <Compile Include="Pages\AnalysePage.cs" />
     <Compile Include="Pages\ChrometisePage.cs" />
     <Compile Include="Pages\Homepage.cs" />
-    <Compile Include="Pages\IWebPage.cs" />
+    <Compile Include="IWebPage.cs" />
     <Compile Include="Pages\StatusPage.cs" />
     <Compile Include="Routes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SurveyPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -98,12 +101,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Chromesthesia.Survey\Chromesthesia.Survey.csproj">
-      <Project>{8cfc25a2-bb06-468e-87c3-ba316371ef4b}</Project>
-      <Name>Chromesthesia.Survey</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -119,7 +116,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>60078</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:50249/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
