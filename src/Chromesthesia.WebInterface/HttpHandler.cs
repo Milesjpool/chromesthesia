@@ -15,18 +15,18 @@ namespace Chromesthesia.WebInterface
             return response;
         }
 
+        public string StatusString(Uri url)
+        {
+            var status = GetStatus(url);
+            return string.Format("{0} ({1})", (int) status, status);
+        }
+
         private HttpStatusCode GetStatus(Uri url)
         {
             var request = WebRequest.Create(url);
             request.Method = WebRequestMethods.Http.Head;
             var response = (HttpWebResponse)request.GetResponse();
             return response.StatusCode;
-        }
-
-        public string StatusString(Uri url)
-        {
-            var status = GetStatus(url);
-            return string.Format("{0} ({1})", (int) status, status);
         }
 
         public string ReadBody(HttpWebResponse response)

@@ -2,7 +2,7 @@
 {
     public class SurveyPage : IWebPage<object>
     {
-        private Routes _routes;
+        private readonly Routes _routes;
 
         public SurveyPage(Routes routes)
         {

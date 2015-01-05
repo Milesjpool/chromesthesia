@@ -84,8 +84,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HttpHandler.cs" />
-    <Compile Include="MusicBrainzInterface.cs" />
+    <Compile Include="Acousticbrainz.cs" />
     <Compile Include="Pages\AnalysePage.cs" />
+    <Compile Include="Pages\ChromesthesiaApp.cs" />
     <Compile Include="Pages\ChrometisePage.cs" />
     <Compile Include="Pages\Homepage.cs" />
     <Compile Include="IWebPage.cs" />

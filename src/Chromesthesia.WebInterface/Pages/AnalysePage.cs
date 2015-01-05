@@ -14,7 +14,7 @@ namespace Chromesthesia.WebInterface.Pages
 
         public string Render()
         {
-            return MusicBrainzInterface.GetHighLevelAnalysisOfMbid(_mbid);
+            return Acousticbrainz.HighLevelAnalysis(_mbid);
         }
     }
 }
