@@ -1,6 +1,4 @@
-using System.Web;
-
-namespace Chromesthesia.WebInterface.Pages
+namespace Chromesthesia.WebInterface.Views
 {
     public class Homepage : IWebPage<string>
     {

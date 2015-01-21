@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace Chromesthesia.WebInterface.Pages
+namespace Chromesthesia.WebInterface.Views
 {
     public class StatusPage : IWebPage<string>
     {

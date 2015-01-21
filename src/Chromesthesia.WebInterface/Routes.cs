@@ -1,4 +1,4 @@
-﻿using Chromesthesia.WebInterface.Pages;
+﻿using Chromesthesia.WebInterface.Views;
 using Nancy;
 
 namespace Chromesthesia.WebInterface

@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace Chromesthesia.WebInterface.Pages
+namespace Chromesthesia.WebInterface.Views
 {
     public static class ChromesthesiaApp
     {

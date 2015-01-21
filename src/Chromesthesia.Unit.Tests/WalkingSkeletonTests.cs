@@ -1,4 +1,4 @@
-﻿using Chromesthesia.WebInterface.Pages;
+﻿using Chromesthesia.WebInterface.Views;
 using NUnit.Framework;
 
 namespace Chromesthesia.Unit.Tests

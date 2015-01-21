@@ -79,18 +79,19 @@
   <ItemGroup>
     <Content Include="content\check.png" />
     <Content Include="content\SurveyStyle.css" />
-    <Content Include="Pages\SurveyPage.html" />
+    <Content Include="Views\SurveyPage.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HttpHandler.cs" />
     <Compile Include="Acousticbrainz.cs" />
-    <Compile Include="Pages\AnalysePage.cs" />
-    <Compile Include="Pages\ChromesthesiaApp.cs" />
-    <Compile Include="Pages\ChrometisePage.cs" />
-    <Compile Include="Pages\Homepage.cs" />
+    <Compile Include="Views\AnalysePage.cs" />
+    <Compile Include="Views\ChromesthesiaApp.cs" />
+    <Compile Include="Views\ChrometisePage.cs" />
+    <Compile Include="Views\Homepage.cs" />
     <Compile Include="IWebPage.cs" />
-    <Compile Include="Pages\StatusPage.cs" />
+    <Compile Include="Views\InvalidMbidException.cs" />
+    <Compile Include="Views\StatusPage.cs" />
     <Compile Include="Routes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SurveyPage.cs" />

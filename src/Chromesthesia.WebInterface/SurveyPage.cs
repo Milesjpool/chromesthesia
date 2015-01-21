@@ -11,7 +11,7 @@
 
         public dynamic Render()
         {
-            return _routes.View["Pages/SurveyPage.html"];
+            return _routes.View["Views/SurveyPage.html"];
         }
     }
 }

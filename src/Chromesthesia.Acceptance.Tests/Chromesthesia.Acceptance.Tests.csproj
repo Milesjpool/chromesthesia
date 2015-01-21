@@ -65,6 +65,8 @@
   <ItemGroup>
     <Compile Include="Code\Browser.cs" />
     <Compile Include="Code\AcceptanceTestDriver.cs" />
+    <Compile Include="Specs\Invalid Requests\InvalidAcousticbrainzRequestSpecs.cs" />
+    <Compile Include="Specs\Invalid Requests\InvalidAcousticbrainzRequestSteps.cs" />
     <Compile Include="Specs\Survey\SurveyUiSpecs.cs" />
     <Compile Include="Specs\Survey\SurveyUiSteps.cs" />
     <Compile Include="Code\Track.cs" />
