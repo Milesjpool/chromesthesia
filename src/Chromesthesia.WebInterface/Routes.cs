@@ -1,18 +1,18 @@
-﻿using Chromesthesia.WebInterface.Views;
+﻿using Chromesthesia.WebInterface.Controllers;
 using Nancy;
 
 namespace Chromesthesia.WebInterface
 {
-    public class Routes : NancyModule
-    {
-        public Routes()
-        {
-            Get["/"] = _ => new Homepage().Render();
-            Get["/status"] = _ => new StatusPage().Render();
-            Get["/analyse/mbid/{id}"] = parameters => new AnalysePage(parameters).Render();
-            Get["/chrometise/mbid/{id}"] = parameters => new ChrometisePage(parameters).Render();
-            Get["/survey"] = _ => new SurveyPage(this).Render();
-        }
-    }
-
+	public class Routes : NancyModule
+	{
+		public Routes()
+		{
+			var controller = new AppController(this);
+			Get["/"] = _ => controller.Home();
+			Get["/status"] = _ => controller.Status();
+			Get["/analyse/mbid/{id}"] = parameters => controller.Analyse(parameters);
+			Get["/chrometise/mbid/{id}"] = parameters => controller.Chrometise(parameters);
+			Get["/survey"] = _ => controller.Survey();
+		}
+	}
 }

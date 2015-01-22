@@ -1,6 +1,6 @@
 using System;
 
-namespace Chromesthesia.WebInterface.Views
+namespace Chromesthesia.WebInterface.Exceptions
 {
 	public class InvalidMbidException : Exception
 	{
