@@ -4,7 +4,7 @@ using Chromesthesia.WebInterface.Exceptions;
 
 namespace Chromesthesia.WebInterface
 {
-	public class AcousticbrainzService
+	public class Acousticbrainz
 	{
 
 		public string GetHighLevel(string mbid)
