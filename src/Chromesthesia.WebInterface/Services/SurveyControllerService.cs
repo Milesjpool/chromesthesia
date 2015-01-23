@@ -18,7 +18,7 @@ namespace Chromesthesia.WebInterface.Services
 		{
 			return new SurveyModel
 				{
-					trackPath = TrackPath(),
+					TrackPath = TrackPath(),
 				};
 		}
 

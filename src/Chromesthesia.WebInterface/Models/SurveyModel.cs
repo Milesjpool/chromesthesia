@@ -2,6 +2,6 @@ namespace Chromesthesia.WebInterface.Models
 {
 	public class SurveyModel
 	{
-		public string trackPath { get; set; }
+		public string TrackPath { get; set; }
 	}
 }

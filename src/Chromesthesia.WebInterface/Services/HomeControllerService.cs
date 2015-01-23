@@ -8,7 +8,7 @@ namespace Chromesthesia.WebInterface.Services
 		{
 			return new HomeModel
 				{
-					mbid = Mbid(),
+					Mbid = Mbid(),
 				};
 		}
 

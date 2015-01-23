@@ -1,5 +1,3 @@
-using System.Drawing;
-
 namespace Chromesthesia.WebInterface.Models
 {
 	public class ChrometiseModel
