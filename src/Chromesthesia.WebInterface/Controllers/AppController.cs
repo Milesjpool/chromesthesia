@@ -1,9 +1,8 @@
-using System.Web.Mvc;
 using Chromesthesia.WebInterface.Services;
 
 namespace Chromesthesia.WebInterface.Controllers
 {
-	public class AppController : Controller
+	public class AppController
 	{
 		private readonly Routes _routes;
 
