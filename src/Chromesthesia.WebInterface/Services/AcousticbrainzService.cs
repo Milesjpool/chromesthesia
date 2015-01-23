@@ -1,7 +1,7 @@
 ﻿using System;
 using Chromesthesia.WebInterface.Exceptions;
 
-namespace Chromesthesia.WebInterface
+namespace Chromesthesia.WebInterface.Services
 {
 	public class AcousticbrainzService
 	{

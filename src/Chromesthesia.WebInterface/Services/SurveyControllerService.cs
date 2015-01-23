@@ -1,10 +1,9 @@
 using System.Collections.Generic;
-using System.Web.Mvc;
 using Chromesthesia.WebInterface.Models;
 
 namespace Chromesthesia.WebInterface.Services
 {
-	public class SurveyControllerService : Controller
+	public class SurveyControllerService
 	{
 		readonly IDictionary<int, string> _tracks;
 		private int _currentTrack;
