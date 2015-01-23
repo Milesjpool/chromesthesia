@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Configuration;
 using Chromesthesia.WebInterface.Exceptions;
 
 namespace Chromesthesia.WebInterface
 {
-	public class Acousticbrainz
+	public class AcousticbrainzService
 	{
 
 		public string GetHighLevel(string mbid)

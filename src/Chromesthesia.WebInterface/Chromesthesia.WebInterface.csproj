@@ -144,6 +144,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acousticbrainz.cs" />
     <Compile Include="Services\AnalyseControllerService.cs" />
     <Compile Include="Models\AnalyseModel.cs" />
     <Compile Include="Services\ChrometiseControllerService.cs" />
@@ -151,7 +152,6 @@
     <Compile Include="Services\HomeControllerService.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="HttpHandler.cs" />
-    <Compile Include="AcousticbrainzService.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Exceptions\InvalidMbidException.cs" />
     <Compile Include="Routes.cs" />

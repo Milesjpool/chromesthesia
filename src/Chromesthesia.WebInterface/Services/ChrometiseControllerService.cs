@@ -1,7 +1,7 @@
 using System.Drawing;
 using Chromesthesia.WebInterface.Models;
 
-namespace Chromesthesia.WebInterface.Controllers
+namespace Chromesthesia.WebInterface.Services
 {
 	public class ChrometiseControllerService
 	{

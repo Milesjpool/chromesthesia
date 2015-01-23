@@ -1,7 +1,6 @@
-using System.Web.Mvc;
 using Chromesthesia.WebInterface.Models;
 
-namespace Chromesthesia.WebInterface.Controllers
+namespace Chromesthesia.WebInterface.Services
 {
 	public class HomeControllerService
 	{

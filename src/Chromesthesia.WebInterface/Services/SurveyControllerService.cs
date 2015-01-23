@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
+using Chromesthesia.WebInterface.Models;
 
 namespace Chromesthesia.WebInterface.Services
 {

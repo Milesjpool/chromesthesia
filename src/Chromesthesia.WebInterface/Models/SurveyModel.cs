@@ -1,4 +1,4 @@
-namespace Chromesthesia.WebInterface
+namespace Chromesthesia.WebInterface.Models
 {
 	public class SurveyModel
 	{
