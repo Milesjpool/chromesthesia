@@ -44,12 +44,19 @@ html, body {
 
 #midColour {
 	width: 16.666666%;
-	height: 20%;
+	height: 17%;
 	float: left;
 }
 
-#greyColour {
+
+#bottomColour {
+	width: 16.666666%;
+	height: 5%;
+	float: left;
+}
+
+#greys {
 	width: 25%;
-	height: 20%;
+	height: 18%;
 	float: left;
 }
