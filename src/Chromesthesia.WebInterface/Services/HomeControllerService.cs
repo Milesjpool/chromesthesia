@@ -6,7 +6,10 @@ namespace Chromesthesia.WebInterface.Services
 	{
 		public HomeModel GetHomeModel()
 		{
-			return new HomeModel();
+			return new HomeModel
+				{
+					mbid = "f989fa05-7e2b-4e88-8a95-b5d68480b539",
+				};
 		}
 	}
 }
