@@ -144,7 +144,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Acousticbrainz.cs" />
+    <Compile Include="AcousticbrainzService.cs" />
     <Compile Include="Services\AnalyseControllerService.cs" />
     <Compile Include="Models\AnalyseModel.cs" />
     <Compile Include="Services\ChrometiseControllerService.cs" />
