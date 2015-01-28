@@ -5,11 +5,12 @@ namespace Chromesthesia.WebInterface.Services
 {
 	public class ChrometiseControllerService
 	{
-		private readonly dynamic _parameters;
+		private readonly InputParser _inputParser;
+
 
 		public ChrometiseControllerService(dynamic parameters)
 		{
-			_parameters = parameters;
+			_inputParser = new InputParser(parameters);
 		}
 
 		public ChrometiseModel GetChrometiseModel()

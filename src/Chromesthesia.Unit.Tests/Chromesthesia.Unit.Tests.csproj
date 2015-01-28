@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\..\packages\Moq.4.2.1409.1722\lib\net40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="Nancy, Version=0.23.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Nancy.dll</HintPath>
@@ -49,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcousticBrainzStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +60,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Chromesthesia.Test.Helpers\Chromesthesia.Test.Helpers.csproj">
+      <Project>{dc78d136-769c-4e88-8b72-d59880b16e66}</Project>
+      <Name>Chromesthesia.Test.Helpers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Chromesthesia.WebInterface\Chromesthesia.WebInterface.csproj">
       <Project>{35F08708-4BCD-451B-B204-37C6D18CC28A}</Project>
       <Name>Chromesthesia.WebInterface</Name>

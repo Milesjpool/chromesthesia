@@ -72,6 +72,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcousticbrainzAnalysis.cs" />
+    <Compile Include="Conversion_from_7digital_to_Musicbrainz_id.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +102,16 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chromesthesia.Test.Helpers\Chromesthesia.Test.Helpers.csproj">
+      <Project>{dc78d136-769c-4e88-8b72-d59880b16e66}</Project>
+      <Name>Chromesthesia.Test.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Chromesthesia.WebInterface\Chromesthesia.WebInterface.csproj">
+      <Project>{35F08708-4BCD-451B-B204-37C6D18CC28A}</Project>
+      <Name>Chromesthesia.WebInterface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

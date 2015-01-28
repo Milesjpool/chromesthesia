@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Chromesthesia.WebInterface.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ToMusicbrainzUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://will-i-munn-store.dokku.nix.sys.7d/api/track/musicbrainz?trackId={0}</Value>
+    </Setting>
+    <Setting Name="AcousticbrainzRoot" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://acousticbrainz.org/</Value>
+    </Setting>
+    <Setting Name="HighLevel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/high-level</Value>
+    </Setting>
+    <Setting Name="LowLevel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/low-level</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

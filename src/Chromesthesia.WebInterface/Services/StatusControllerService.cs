@@ -1,12 +1,25 @@
 using System;
-using System.Configuration;
+using System.Net;
 using System.Reflection;
+using Chromesthesia.WebInterface.HttpHelpers;
+using Chromesthesia.WebInterface.Interfaces;
 using Chromesthesia.WebInterface.Models;
 
 namespace Chromesthesia.WebInterface.Services
 {
 	public class StatusControllerService
 	{
+		private readonly IAcousticbrainzExchange _acousticBrainzExchange;
+
+		public StatusControllerService()
+		{
+			_acousticBrainzExchange = new AcousticbrainzExchange();
+		}
+
+		public StatusControllerService(IAcousticbrainzExchange acousticBrainzExchange)
+		{
+			_acousticBrainzExchange = acousticBrainzExchange;
+		}
 
 		public StatusModel GetStatusModel()
 		{
@@ -34,10 +47,9 @@ namespace Chromesthesia.WebInterface.Services
 			return Environment.MachineName;
 		}
 
-		private static string AcousticbrainzStatus()
+		private string AcousticbrainzStatus()
 		{
-			var abUrl = new Uri(ConfigurationManager.ConnectionStrings["AcousticbrainzUrl"].ConnectionString);
-			return new HttpHandler().StatusString(abUrl);
+			return _acousticBrainzExchange.GetStatus();
 		}
 	}
 }

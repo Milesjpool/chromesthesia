@@ -3,7 +3,7 @@ using System.IO;
 using System.Net;
 using NUnit.Framework;
 
-namespace Chromesthesia.Acceptance.Tests
+namespace Chromesthesia.Test.Helpers
 {
     public static class Browser
     {

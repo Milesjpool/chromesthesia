@@ -139,12 +139,17 @@
     <Content Include="Views\Chrometise.cshtml" />
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Survey.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HttpHandler.cs" />
     <Compile Include="Controllers\AppController.cs" />
-    <Compile Include="Exceptions\InvalidMbidException.cs" />
+    <Compile Include="Exceptions\InvalidMusicbrainzIdException.cs" />
+    <Compile Include="Exceptions\Invalid7DigitalIdException.cs" />
+    <Compile Include="Exceptions\MusicbrainzIdNotFoundException.cs" />
+    <Compile Include="HttpHelpers\WebRequestExtensions.cs" />
+    <Compile Include="HttpHelpers\WebResponseExtensions.cs" />
     <Compile Include="Models\AnalyseModel.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -160,20 +165,30 @@
     <Compile Include="Models\SurveyModel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Routes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AcousticbrainzService.cs">
+    <Compile Include="Services\AcousticbrainzExchange.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Services\AnalyseControllerService.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Services\AnalysisLevels.cs" />
     <Compile Include="Services\ChrometiseControllerService.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Services\HomeControllerService.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Exceptions\InvalidIdTypeException.cs" />
+    <Compile Include="Interfaces\IAcousticbrainzExchange.cs" />
+    <Compile Include="Services\InputParser.cs" />
+    <Compile Include="Parsing\Mbid.cs" />
     <Compile Include="Services\StatusControllerService.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -183,19 +198,25 @@
     <Compile Include="Services\SurveyTracks.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Parsing\SevenDigitalId.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Views\Status.cshtml" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <PropertyGroup>

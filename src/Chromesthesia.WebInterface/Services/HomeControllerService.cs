@@ -14,7 +14,7 @@ namespace Chromesthesia.WebInterface.Services
 
 		private static string Mbid()
 		{
-			return "f989fa05-7e2b-4e88-8a95-b5d68480b539";
+			return "0310e92c-331c-4f61-bc4d-3c3ba6e88aec";
 		}
 	}
 }

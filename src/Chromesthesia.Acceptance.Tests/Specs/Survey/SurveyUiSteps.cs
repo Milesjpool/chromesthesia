@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Chromesthesia.Acceptance.Tests
+namespace Chromesthesia.Acceptance.Tests.Specs.Survey
 {
     public class SurveyUiSteps
     {
