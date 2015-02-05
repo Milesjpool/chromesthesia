@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Nancy.Json;
+using Newtonsoft.Json;
 
 namespace Chromesthesia.WebInterface.AcousticbrainzHelpers
 {
@@ -36,6 +36,7 @@ namespace Chromesthesia.WebInterface.AcousticbrainzHelpers
 
 			public class Gender
 			{
+				public string value { get; set; }
 			}
 
 			public class GenreDortmund
@@ -125,9 +126,14 @@ namespace Chromesthesia.WebInterface.AcousticbrainzHelpers
 
 			public class Tags
 			{
+				[JsonProperty("musicbrainz album release country")]
 				public List<string> musicbrainz_album_release_country;
-				public List<string> musicbrainz_album_status;
-				public List<string> musicbrainz_album_type;
+				[JsonProperty("musicbrainz album status")]
+				public string[] musicbrainz_album_status;
+				[JsonProperty("musicbrainz album type")]
+				public string[] musicbrainz_album_type;
+				public string[] artist;
+				public string[] title;
 			}
 		}
 

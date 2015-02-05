@@ -4,8 +4,11 @@
         <title></title>
     </head>
     <body>
+        <h1>@Model.Artist - @Model.Track</h1>
         <svg xmlns='http://www.w3.org/2000/svg'>
-            <rect x='5' y='5' width='180' height='90' stroke='black' fill='@Model.HtmlColour' />
+            <rect x='5' y='5' width='180' height='90' stroke='black' fill='@Model.HtmlColour'>
+                @Model.HtmlColour
+            </rect>
         </svg>
     </body>
 </html>

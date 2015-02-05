@@ -53,6 +53,9 @@
     <Reference Include="Nancy.ViewEngines.Razor">
       <HintPath>..\..\packages\Nancy.Viewengines.Razor.0.23.2\lib\net40\Nancy.ViewEngines.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -147,6 +150,7 @@
     <Compile Include="AcousticbrainzHelpers\AcousticbrainzExtensions.cs" />
     <Compile Include="AcousticbrainzHelpers\AcousticbrainzResult.cs" />
     <Compile Include="AcousticbrainzHelpers\Analysis.cs" />
+    <Compile Include="Chrometisation\ColourCalculator.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Exceptions\InvalidMusicbrainzIdException.cs" />
     <Compile Include="Exceptions\Invalid7DigitalIdException.cs" />
@@ -189,7 +193,7 @@
     </Compile>
     <Compile Include="Exceptions\InvalidIdTypeException.cs" />
     <Compile Include="Interfaces\IAcousticbrainzExchange.cs" />
-    <Compile Include="AcousticbrainzHelpers\InputParser.cs" />
+    <Compile Include="Parsing\InputParser.cs" />
     <Compile Include="Parsing\Mbid.cs" />
     <Compile Include="Services\StatusControllerService.cs">
       <SubType>Code</SubType>

@@ -1,7 +1,10 @@
+using System.Collections.Generic;
+
 namespace Chromesthesia.WebInterface.Models
 {
 	public class HomeModel
 	{
-		public string Mbid { get; set; }
+		public List<string> Mbids { get; set; }
+		public List<string> Ids7D { get; set; }
 	}
 }

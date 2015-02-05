@@ -1,4 +1,4 @@
-﻿using Nancy.Json;
+﻿using System.Web.Script.Serialization;
 
 namespace Chromesthesia.WebInterface.AcousticbrainzHelpers
 {
