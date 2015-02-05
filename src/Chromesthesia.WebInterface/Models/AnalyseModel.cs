@@ -2,6 +2,6 @@ namespace Chromesthesia.WebInterface.Models
 {
 	public class AnalyseModel
 	{
-		public string HighLevel { get; set; }
+		public string Analysis { get; set; }
 	}
 }

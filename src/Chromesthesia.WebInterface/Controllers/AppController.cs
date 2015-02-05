@@ -36,7 +36,7 @@ namespace Chromesthesia.WebInterface.Controllers
 		{
 			var controllerService = new AnalyseControllerService(parameters);
 			var model = controllerService.GetAnalyseModel();
-			return model.HighLevel;
+			return model.Analysis;
 		}
 
 		public dynamic Survey()

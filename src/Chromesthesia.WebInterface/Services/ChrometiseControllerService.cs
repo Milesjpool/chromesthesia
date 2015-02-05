@@ -1,4 +1,5 @@
 using System.Drawing;
+using Chromesthesia.WebInterface.AcousticbrainzHelpers;
 using Chromesthesia.WebInterface.Models;
 
 namespace Chromesthesia.WebInterface.Services

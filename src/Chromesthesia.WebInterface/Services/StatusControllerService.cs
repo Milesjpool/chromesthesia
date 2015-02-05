@@ -1,7 +1,6 @@
 using System;
-using System.Net;
 using System.Reflection;
-using Chromesthesia.WebInterface.HttpHelpers;
+using Chromesthesia.WebInterface.AcousticbrainzHelpers;
 using Chromesthesia.WebInterface.Interfaces;
 using Chromesthesia.WebInterface.Models;
 

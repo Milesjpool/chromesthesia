@@ -1,3 +1,4 @@
+using Chromesthesia.WebInterface.AcousticbrainzHelpers;
 using Chromesthesia.WebInterface.Exceptions;
 using Chromesthesia.WebInterface.Models;
 
@@ -16,16 +17,16 @@ namespace Chromesthesia.WebInterface.Services
 		{
 			return new AnalyseModel
 				{
-					HighLevel = HighLevel()
+					Analysis = Analysis()
 				};
 		}
 
-		private string HighLevel()
+		private string Analysis()
 		{
 			try
 			{
 				var mbid = _inputParser.GetMbid();
-				return new AcousticbrainzExchange().GetAnalysis(mbid, AnalysisLevels.High);
+				return new AcousticbrainzExchange().GetAnalysisOf(mbid).HighLevelJson;
 			}
 			catch (InvalidMusicbrainzIdException e)
 			{

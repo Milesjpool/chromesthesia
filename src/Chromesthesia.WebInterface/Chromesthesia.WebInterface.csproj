@@ -144,6 +144,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcousticbrainzHelpers\AcousticbrainzExtensions.cs" />
+    <Compile Include="AcousticbrainzHelpers\AcousticbrainzResult.cs" />
+    <Compile Include="AcousticbrainzHelpers\Analysis.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Exceptions\InvalidMusicbrainzIdException.cs" />
     <Compile Include="Exceptions\Invalid7DigitalIdException.cs" />
@@ -172,13 +175,12 @@
     </Compile>
     <Compile Include="Routes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AcousticbrainzExchange.cs">
+    <Compile Include="AcousticbrainzHelpers\AcousticbrainzExchange.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Services\AnalyseControllerService.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Services\AnalysisLevels.cs" />
     <Compile Include="Services\ChrometiseControllerService.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -187,7 +189,7 @@
     </Compile>
     <Compile Include="Exceptions\InvalidIdTypeException.cs" />
     <Compile Include="Interfaces\IAcousticbrainzExchange.cs" />
-    <Compile Include="Services\InputParser.cs" />
+    <Compile Include="AcousticbrainzHelpers\InputParser.cs" />
     <Compile Include="Parsing\Mbid.cs" />
     <Compile Include="Services\StatusControllerService.cs">
       <SubType>Code</SubType>

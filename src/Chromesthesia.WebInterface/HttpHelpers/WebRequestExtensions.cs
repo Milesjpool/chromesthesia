@@ -6,7 +6,7 @@ namespace Chromesthesia.WebInterface.HttpHelpers
 	{
 		public static WebResponse GetHeader(this WebRequest request)
 		{
-			//request.Method = WebRequestMethods.Http.Head;
+			request.Method = WebRequestMethods.Http.Head;
 			return request.GetResponse();
 		}
 	}

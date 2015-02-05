@@ -1,7 +1,7 @@
 using Chromesthesia.WebInterface.Exceptions;
 using Chromesthesia.WebInterface.Parsing;
 
-namespace Chromesthesia.WebInterface.Services
+namespace Chromesthesia.WebInterface.AcousticbrainzHelpers
 {
 	public class InputParser
 	{
