@@ -41,9 +41,7 @@ namespace Chromesthesia.WebInterface.Controllers
 
 		public dynamic Survey()
 		{
-			var controllerService = new SurveyControllerService();
-			var model = controllerService.GetSurveyModel();
-			return _routes.View["Views/Survey.cshtml", model];
+			return _routes.View["Views/Survey.cshtml"];
 		}
 	}
 }
