@@ -11,11 +11,37 @@
 </head>
 <body>
     <audio id="audio" autoplay="true" loop="true">
-        <source id="audioSource" src="Content/Clips/City And Colour - Comin' Home.mp3" type="audio/mp3"/>
+        <source id="audioSource" src="" type="audio/mp3"/>
         Your browser does not support the audio element.
     </audio>
     <div id="topBar">
-        <h2 id="title" style="color: white; float: left; margin: 0%; font-family: sans-serif">Chromesthesia Survey</h2>
+        <div>
+            <h1 id="title" style="margin: 5px; position: absolute" >Chromesthesia Survey</h1>
+            <!-- show instructions -->
+        </div>
+        <div>
+            <!-- next track-->
+        </div>
+        <div>
+            <!-- pause -->
+        </div>
+    </div>
+    <div id="intro">
+        <div id="introTop">
+            Instructions
+        </div>
+        <div id="introMid">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
+            Integer sed metus sem. Curabitur tincidunt maximus est id egestas. <br/>
+            Vestibulum at diam rutrum, luctus neque nec, <br/>
+            lacinia mauris.<p/>
+            Duis ac suscipit augue. Aliquam id egestas felis,<br/>
+            ac vulputate magna. Curabitur ut sem a dui fringilla finibus. <br/>
+            Nam purus dui, facilisis in diam non, sagittis fermentum nulla. <br/>
+        </div>
+        <div id="introBottom">
+            <button id="start" >Okay</button>
+        </div>
     </div>
     <div id="centre">
         <div id="pallete">
@@ -46,6 +72,8 @@
             <button id="black" class="colour grey" style="background-color: #000000"></button>
         </div>
     </div>
-    <div id="bottomBar"></div>
+    <div id="bottomBar" style="text-align: right">
+        <a href="/" style="color: white; padding-right: 1%">Chromesthesia</a>
+    </div>
 </body>
 </html>

@@ -2,7 +2,27 @@
     
     var numOfTracks = tracks.length;
     var trackId = Math.floor(Math.random() * numOfTracks);
-    play(trackId);
+
+    $('#start').mousedown(function() {
+        $(this).css("border-bottom-width", "3px");
+        $(this).css("border-top-width", "2px");
+        $(this).css("border-bottom-color", "#ccddff");
+        $(this).css("border-top-color", "#5566dd");
+        $(this).css("background-color", "#aabbees");
+    });
+    
+    $('#start').mouseup(function () {
+        $("#intro").animate({ "top": "-50%" }, 200, function() {
+            $("#intro").hide();
+        });
+        play(trackId);
+    });
+
+    $('#start').hover(function () {
+        $(this).animate({ "border-bottom-width":"2px", "border-top-width":"4px" }, 10);
+    }, function () {
+        $(this).css({ "border-bottom-width": "1px", "border-top-width": "3px" }, 10);
+    });
 
     $('.colour').click(function () {
         var colour = $(this).css("background-color");
