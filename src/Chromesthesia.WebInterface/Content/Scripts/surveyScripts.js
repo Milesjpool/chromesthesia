@@ -3,15 +3,28 @@
     var numOfTracks = tracks.length;
     var trackId = Math.floor(Math.random() * numOfTracks);
 
+    $('#pause').click(function () {
+        $("#intro").show();
+        $("#intro").animate({ "top": "50%" }, 200);
+        pause();
+    });
+
+    $('#pause').hover(function () {
+        $(this).css("color", "#ffffff");
+    }, function () {
+        $(this).css( "color", "#000000");
+    });
+
     $('#start').mousedown(function() {
-        $(this).css("border-bottom-width", "3px");
-        $(this).css("border-top-width", "2px");
-        $(this).css("border-bottom-color", "#ccddff");
-        $(this).css("border-top-color", "#5566dd");
-        $(this).css("background-color", "#aabbees");
+        $(this).css("border-bottom", "3px solid #ccddff");
+        $(this).css("border-top-width", "2px solid #5566dd");
+        $(this).css("background-color", "#aabbee");
     });
     
     $('#start').mouseup(function () {
+        $(this).css("border-bottom", "1px solid #2233aa");
+        $(this).css("border-top", "3px solid #ccddff");
+        $(this).css("background-color", "#5566dd");
         $("#intro").animate({ "top": "-50%" }, 200, function() {
             $("#intro").hide();
         });
@@ -21,7 +34,7 @@
     $('#start').hover(function () {
         $(this).animate({ "border-bottom-width":"2px", "border-top-width":"4px" }, 10);
     }, function () {
-        $(this).css({ "border-bottom-width": "1px", "border-top-width": "3px" }, 10);
+        $(this).animate({ "border-bottom-width": "1px", "border-top-width": "3px" }, 10);
     });
 
     $('.colour').click(function () {
@@ -40,6 +53,12 @@
     function play(track) {
         var $source = tracks[track];
         var $newSource = '<source id="audioSource" src="Content/Clips/' + $source + '.mp3" type="audio/mp3"/>';
+        $("#audioSource").replaceWith($newSource);
+        $("audio").load();
+    }
+    
+    function pause() {
+        var $newSource = '<source id="audioSource" src="" type="audio/mp3"/>';
         $("#audioSource").replaceWith($newSource);
         $("audio").load();
     }

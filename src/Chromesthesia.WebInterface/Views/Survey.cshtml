@@ -11,36 +11,46 @@
 </head>
 <body>
     <audio id="audio" autoplay="true" loop="true">
-        <source id="audioSource" src="" type="audio/mp3"/>
+        <source id="audioSource" src="" type="audio/mp3" />
         Your browser does not support the audio element.
     </audio>
+
+
     <div id="topBar">
-        <div>
-            <h1 id="title" style="margin: 5px; position: absolute" >Chromesthesia Survey</h1>
+        <div style="min-width: 80%">
+            <h1 id="title" style="margin: 5px; position: absolute">Chromesthesia Survey</h1>
             <!-- show instructions -->
         </div>
-        <div>
+        <div style="width: 10%">
             <!-- next track-->
         </div>
-        <div>
-            <!-- pause -->
+        <div style="width: 10%">
+            <button id="pause">
+                pause
+            </button>
         </div>
     </div>
+
+
     <div id="intro">
         <div id="introTop">
             Instructions
         </div>
         <div id="introMid">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-            Integer sed metus sem. Curabitur tincidunt maximus est id egestas. <br/>
-            Vestibulum at diam rutrum, luctus neque nec, <br/>
-            lacinia mauris.<p/>
-            Duis ac suscipit augue. Aliquam id egestas felis,<br/>
-            ac vulputate magna. Curabitur ut sem a dui fringilla finibus. <br/>
-            Nam purus dui, facilisis in diam non, sagittis fermentum nulla. <br/>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
+            Integer sed metus sem. Curabitur tincidunt maximus est id egestas.
+            <br />
+            Vestibulum at diam rutrum, luctus neque nec,
+            <br />
+            lacinia mauris.<p />
+            Duis ac suscipit augue. Aliquam id egestas felis,<br />
+            ac vulputate magna. Curabitur ut sem a dui fringilla finibus.
+            <br />
+            Nam purus dui, facilisis in diam non, sagittis fermentum nulla.
+            <br />
         </div>
         <div id="introBottom">
-            <button id="start" >Okay</button>
+            <button id="start">Okay</button>
         </div>
     </div>
     <div id="centre">
@@ -59,7 +69,7 @@
             <button id="lightBlue" class="colour mid" style="background-color: #4d4dff"></button>
             <button id="lightPurple" class="colour mid" style="background-color: #c44dff"></button>
 
-            <button id="darkGreen" class="colour bottom"  style="background-color: #5ab300"></button>
+            <button id="darkGreen" class="colour bottom" style="background-color: #5ab300"></button>
             <button id="darkBlue" class="colour bottom" style="background-color: #0000b3"></button>
             <button id="darkPurple" class="colour bottom" style="background-color: #7700b3"></button>
             <button id="darkRed" class="colour bottom" style="background-color: #b30000"></button>
