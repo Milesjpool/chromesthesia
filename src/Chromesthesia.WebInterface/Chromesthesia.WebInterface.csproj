@@ -138,6 +138,8 @@
     <Content Include="Content\Clips\Vampire Weekend - A-Punk.mp3" />
     <Content Include="Content\Clips\Venetian Snares - Plunging Hornets.mp3" />
     <Content Include="Content\Images\check.png" />
+    <Content Include="Content\Images\pause.png" />
+    <Content Include="Content\Images\play.png" />
     <Content Include="Content\SurveyStyle.css" />
     <Content Include="Content\Scripts\surveyScripts.js" />
     <Content Include="Views\Chrometise.cshtml" />
@@ -205,6 +207,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </Content>
+    <Content Include="Content\Fonts\Lobster.otf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

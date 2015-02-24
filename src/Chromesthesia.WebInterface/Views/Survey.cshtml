@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>Chromesthesia Survey</title>
     <link rel="stylesheet" href="Content/SurveyStyle.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
     <script src='Content/Scripts/surveyScripts.js' type='text/javascript'></script>
     <script src="//www.parsecdn.com/js/parse-1.3.4.min.js"></script>
@@ -17,40 +18,32 @@
 
 
     <div id="topBar">
-        <div style="min-width: 80%">
-            <h1 id="title" style="margin: 5px; position: absolute">Chromesthesia Survey</h1>
-            <!-- show instructions -->
-        </div>
-        <div style="width: 10%">
-            <!-- next track-->
-        </div>
-        <div style="width: 10%">
-            <button id="pause">
-                pause
-            </button>
-        </div>
+        <h3 id="title"><a href="/">CHROMESTHESIA</a></h3>
+        <input id="playPause" class="control" type="image" src="content/Images/play.png" />
+        <input id="skip" class="control" type="image" src="content/Images/skip.png" />
     </div>
 
-
     <div id="intro">
-        <div id="introTop">
-            Instructions
-        </div>
-        <div id="introMid">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
-            Integer sed metus sem. Curabitur tincidunt maximus est id egestas.
+        <div id="introBackground">
+            <div id="introTop">
+                Instructions
+            </div>
+            <div id="introMid">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
+                Integer sed metus sem. Curabitur tincidunt maximus est id egestas.
             <br />
-            Vestibulum at diam rutrum, luctus neque nec,
+                Vestibulum at diam rutrum, luctus neque nec,
             <br />
-            lacinia mauris.<p />
-            Duis ac suscipit augue. Aliquam id egestas felis,<br />
-            ac vulputate magna. Curabitur ut sem a dui fringilla finibus.
+                lacinia mauris.<p />
+                Duis ac suscipit augue. Aliquam id egestas felis,<br />
+                ac vulputate magna. Curabitur ut sem a dui fringilla finibus.
             <br />
-            Nam purus dui, facilisis in diam non, sagittis fermentum nulla.
+                Nam purus dui, facilisis in diam non, sagittis fermentum nulla.
             <br />
-        </div>
-        <div id="introBottom">
-            <button id="start">Okay</button>
+            </div>
+            <div id="introBottom">
+                <button id="start">Okay</button>
+            </div>
         </div>
     </div>
     <div id="centre">
@@ -83,7 +76,6 @@
         </div>
     </div>
     <div id="bottomBar" style="text-align: right">
-        <a href="/" style="color: white; padding-right: 1%">Chromesthesia</a>
     </div>
 </body>
 </html>
