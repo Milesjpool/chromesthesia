@@ -43,9 +43,9 @@ hr {
     height: auto;
     z-index: 1;
     position: absolute;
-    margin: -25% 0 0 -25%;
-    top: 50%;
-    left: 50%;
+    margin: auto;
+    top: 13%;
+    left: 25%;
     border: 5px solid #515269;
     background-color: #eeeeff;
     -webkit-box-shadow: 0px 12px 29px -4px rgba(0,0,0,0.79);
