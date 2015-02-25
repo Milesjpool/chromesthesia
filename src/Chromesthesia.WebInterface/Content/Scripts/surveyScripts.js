@@ -55,9 +55,9 @@
 
     function play() {
         $("#playPause").attr("src", "content/Images/pause.png");
-        $("#introBackground").animate({ "top": "-50%" }, 200, function () {
+        $("#intro").animate({ "top": "-50%" }, 200, function () {
             $(".colour").css("cursor", "pointer");
-            $("#introBackground").hide();
+            $("#intro").hide();
         });
         playTrack(trackId);
         paused = false;
@@ -65,9 +65,9 @@
 
     function pause() {
         $("#playPause").attr("src", "content/Images/play.png");
-        $("#introBackground").show();
+        $("#intro").show();
         $(".colour").css("cursor", "default");
-        $("#introBackground").animate({ "top": "13%" }, 200);
+        $("#intro").animate({ "top": "13%" }, 200);
         var $newSource = '<source id="audioSource" src="" type="audio/mp3"/>';
         $("#audioSource").replaceWith($newSource);
         $("audio").load();
