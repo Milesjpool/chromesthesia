@@ -5,22 +5,20 @@
     var paused = true;
 
     $('#start').mousedown(function () {
-        $(this).css("border-bottom", "3px solid #ccddff");
-        $(this).css("border-top-width", "2px solid #5566dd");
-        $(this).css("background-color", "#aabbee");
+        $(this).css("border-top", "2px solid #A2A2B9");
+        $(this).css("border-bottom", "1px solid #ffffff");
     });
 
     $('#start').mouseup(function () {
-        $(this).css("border-bottom", "1px solid #2233aa");
-        $(this).css("border-top", "3px solid #ccddff");
-        $(this).css("background-color", "#5566dd");
+        $(this).css("border-top", "2px solid #ffffff");
+        $(this).css("border-bottom", "1px solid #A2A2B9");
         play();
     });
 
     $('#start').hover(function () {
-        $(this).animate({ "border-bottom-width": "2px", "border-top-width": "4px" }, 10);
+        $(this).css("color", "white");
     }, function () {
-        $(this).animate({ "border-bottom-width": "1px", "border-top-width": "3px" }, 10);
+        $(this).css("color", "#515269");
     });
 
     $('#playPause').click(function () {
