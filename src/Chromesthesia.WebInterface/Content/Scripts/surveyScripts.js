@@ -34,17 +34,21 @@
     });
 
     $('.colour').click(function () {
-        $(this).animate({ "border-width": "5px" }, 100, function() {
-            $(this).animate({ "border-width": "2px" }, 200);
-        });
-        var colour = $(this).css("background-color");
-        saveResult(trackId, colour);
-        trackId = iterate(trackId, numOfTracks);
-        playTrack(trackId);
+        if (!paused) {
+            $(this).animate({ "border-width": "5px" }, 100, function() {
+                $(this).animate({ "border-width": "2px" }, 200);
+            });
+            var colour = $(this).css("background-color");
+            saveResult(trackId, colour);
+            trackId = iterate(trackId, numOfTracks);
+            playTrack(trackId);
+        }
     });
 
     $('.colour').hover(function () {
-        $(this).animate({ "border-width": "2px" }, 50);
+        if (!paused) {
+            $(this).animate({ "border-width": "2px" }, 50);
+        }
     }, function () {
         $(this).animate({ "border-width": "0" }, 100);
     });
@@ -52,15 +56,17 @@
     function play() {
         $("#playPause").attr("src", "content/Images/pause.png");
         $("#introBackground").animate({ "top": "-50%" }, 200, function () {
-            $("#intro").hide();
+            $("#introBackground").hide();
         });
         playTrack(trackId);
+        $(".colour").css("cursor", "pointer");
         paused = false;
     }
 
     function pause() {
         $("#playPause").attr("src", "content/Images/play.png");
-        $("#intro").show();
+        $("#introBackground").show();
+        $(".colour").css("cursor", "default");
         $("#introBackground").animate({ "top": "50%" }, 200);
         var $newSource = '<source id="audioSource" src="" type="audio/mp3"/>';
         $("#audioSource").replaceWith($newSource);

@@ -137,9 +137,18 @@
     <Content Include="Content\Clips\The Who - Won%27t Get Fooled Again.mp3" />
     <Content Include="Content\Clips\Vampire Weekend - A-Punk.mp3" />
     <Content Include="Content\Clips\Venetian Snares - Plunging Hornets.mp3" />
-    <Content Include="Content\Images\check.png" />
-    <Content Include="Content\Images\pause.png" />
-    <Content Include="Content\Images\play.png" />
+    <Content Include="Content\Images\check.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\pause.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\play.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\skip.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\SurveyStyle.css" />
     <Content Include="Content\Scripts\surveyScripts.js" />
     <Content Include="Views\Chrometise.cshtml" />
