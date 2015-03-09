@@ -16,8 +16,8 @@ h3 {
     position: relative;
     bottom: -15%;
     font-family: 'Montserrat', sans-serif;
-    font-size: x-large;
-    letter-spacing: 6px;
+    font-size: 4vmin;
+    letter-spacing: .3em;
 }
 
 h2 {
@@ -27,7 +27,7 @@ h2 {
     text-align: center;
     font-family: Lobster, serif;
     font-style: italic;
-    font-size: xx-large;
+    font-size: 40px;
 }
 
 hr {
@@ -87,7 +87,7 @@ hr {
     width: 98%;
     height: 98%;
     margin: 0 auto;
-    padding: 10px;
+    padding: 1%;
     position: relative;
 }
 
@@ -141,7 +141,7 @@ hr {
     margin: auto;
     top: 13%;
     left: 25%;
-    border: 5px solid #515269;
+    border: 0.5em solid #515269;
     background-color: #eeeeff;
     -webkit-box-shadow: 0px 12px 29px -4px rgba(0,0,0,0.79);
     -moz-box-shadow: 0px 12px 29px -4px rgba(0,0,0,0.79);
@@ -155,10 +155,12 @@ hr {
 }
 
 #introMid {
-    width: 100%;
+    width: 96%;
     height: auto;
     text-align: center;
+    margin-left: 2%;
     font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
     color: #515269;
 }
 
@@ -181,7 +183,7 @@ hr {
     background-color: #D1D1DC;
     outline: none;
     cursor: pointer;
-    font-size: large;
+    font-size: x-large;
     font-weight: bold;
     letter-spacing: 2px;
     font-family: 'Montserrat', sans-serif;
