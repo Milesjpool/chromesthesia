@@ -6,22 +6,14 @@
 <body>
     <h1>Welcome to Chromesthesia!</h1>
     <p />
-    Chrometise MBID: 
-    <a href='/chrometise/mbid/@Model.Mbids[0]'>
-        @Model.Mbids[0]
-    </a>
-    &nbsp;
-    <a href='/chrometise/mbid/@Model.Mbids[1]'>
-        @Model.Mbids[1]
-    </a>
-    <p />
+    <p/>
     Chrometise 7D:
-    <a href='/chrometise/7d/@Model.Ids7D[0]'>
-        @Model.Ids7D[0]
+    <a href='/chrometise/7d/@Model.Tracks[0].Id7D'>
+        @Model.Tracks[0].Id7D
     </a>
     &nbsp;
-    <a href='/chrometise/7d/@Model.Ids7D[1]'>
-        @Model.Ids7D[1]
+    <a href='/chrometise/7d/@Model.Tracks[1].Id7D'>
+        @Model.Tracks[1].Id7D
     </a>
 </body>
 </html>

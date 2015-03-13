@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Chromesthesia.WebInterface.Models;
+using Chromesthesia.WebInterface.Parsing;
 
 namespace Chromesthesia.WebInterface.Services
 {
@@ -9,26 +10,18 @@ namespace Chromesthesia.WebInterface.Services
 		{
 			return new HomeModel
 				{
-					Ids7D = Ids7D(),
-					Mbids = Mbids(),
+					Tracks = Tracks(),
 				};
 		}
 
-		private List<string> Ids7D()
+		private List<Track> Tracks()
 		{
-			return new List<string>
+			var id1 = new SevenDigitalId("21849720");
+			var id2 = new SevenDigitalId("5971578");
+			return new List<Track>
 				{
-					"21849720",
-					"5971578"
-				};
-		}
-
-		private List<string> Mbids()
-		{
-			return new List<string>
-				{
-					"c9017c7b-0d67-4cac-8626-35e4b73e5285",
-					"5f64bf87-a18e-4ac0-8a49-dc1d500a8ba5"
+					new Track {Id7D = id1, Mbid = id1.ToMbid()},
+					new Track {Id7D = id2, Mbid = id2.ToMbid()},
 				};
 		}
 	}

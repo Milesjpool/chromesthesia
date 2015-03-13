@@ -57,6 +57,7 @@
     <Compile Include="AcousticBrainzStatus.cs" />
     <Compile Include="ChrometisationResult.cs" />
     <Compile Include="DeserialisingAcousticbrainzAnalysis.cs" />
+    <Compile Include="HomeModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
