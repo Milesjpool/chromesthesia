@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Chromesthesia.WebInterface.Parsing;
 
 namespace Chromesthesia.WebInterface.Models
 {

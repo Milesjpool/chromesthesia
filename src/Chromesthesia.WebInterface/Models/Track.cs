@@ -1,4 +1,6 @@
-namespace Chromesthesia.WebInterface.Parsing
+using Chromesthesia.WebInterface.Parsing;
+
+namespace Chromesthesia.WebInterface.Models
 {
 	public class Track
 	{

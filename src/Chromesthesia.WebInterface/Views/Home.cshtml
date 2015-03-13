@@ -6,14 +6,15 @@
 <body>
     <h1>Welcome to Chromesthesia!</h1>
     <p />
-    <p/>
+    <p />
     Chrometise 7D:
-    <a href='/chrometise/7d/@Model.Tracks[0].Id7D'>
-        @Model.Tracks[0].Id7D
-    </a>
-    &nbsp;
-    <a href='/chrometise/7d/@Model.Tracks[1].Id7D'>
-        @Model.Tracks[1].Id7D
-    </a>
+    <p/>
+        @foreach (var track in Model.Tracks)
+        {
+            <a href='/chrometise/7d/@track.Id7D'>
+                @track.Id7D
+            </a>
+            <br/>
+        }
 </body>
 </html>
