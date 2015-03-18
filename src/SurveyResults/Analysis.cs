@@ -10,9 +10,9 @@
 			}
 		}
 
-		public static void Single(int maxTrackId)
+		public static void Single(int maxTrackId, UserInput userInput)
 		{
-			var trackId = UserInput.GetTrackId(maxTrackId);
+			var trackId = userInput.GetTrackId(maxTrackId);
 			new DataForTrack(trackId).Verbose();
 		}
 	}

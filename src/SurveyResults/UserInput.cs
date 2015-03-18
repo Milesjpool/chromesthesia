@@ -2,23 +2,30 @@
 
 namespace SurveyResults
 {
-	static class UserInput
+	public class UserInput
 	{
-		public static int GetTrackId(int maxTrackId)
+		private IUserInterface _consoleUi;
+
+		public UserInput(IUserInterface consoleUi)
+		{
+			_consoleUi = consoleUi;
+		}
+
+		public int GetTrackId(int maxTrackId)
 		{
 			bool validId = false;
 			int trackId = 0;
 			while (!validId)
 			{
 				Console.WriteLine("Which track would you like to analyse?");
-				validId = (int.TryParse(Console.ReadLine(), out trackId) && trackId <= maxTrackId);
+				validId = (int.TryParse(_consoleUi.ReadLine(), out trackId) && trackId <= maxTrackId);
 				if (!validId)
 					Console.WriteLine("Sorry, that's not a valid ID");
 			}
 			return trackId;
 		}
 
-		public static bool AnalyseAll()
+		public bool AnalyseAll()
 		{
 			while (true)
 			{
@@ -35,10 +42,14 @@ namespace SurveyResults
 			}
 		}
 
-		public static bool AnalyseAgain()
+		public bool AnalyseAgain()
 		{
 			Console.Write("Would you like to carry out another analysis? (Y/n) ");
 			return Console.ReadLine().ToLower().Equals("y");
 		}
+	}
+	public interface IUserInterface
+	{
+		string ReadLine();
 	}
 }

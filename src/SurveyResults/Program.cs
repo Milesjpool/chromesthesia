@@ -6,17 +6,18 @@
 
 		static void Main(string[] args)
 		{
+			var userInput = new UserInput(new ConsoleUi());
 			do
 			{
-				if (UserInput.AnalyseAll())
+				if (userInput.AnalyseAll())
 				{
 					Analysis.All(MaxTrackId);
 				}
 				else
 				{
-					Analysis.Single(MaxTrackId);
+					Analysis.Single(MaxTrackId, userInput);
 				}
-			} while (UserInput.AnalyseAgain());
+			} while (userInput.AnalyseAgain());
 		}
 	}
 }
