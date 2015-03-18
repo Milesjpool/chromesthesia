@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Analyse.cs" />
+    <Compile Include="Analysis.cs" />
+    <Compile Include="Colour.cs" />
+    <Compile Include="DataForTrack.cs" />
     <Compile Include="ParseData.cs" />
     <Compile Include="ParseApi.cs" />
     <Compile Include="Program.cs" />

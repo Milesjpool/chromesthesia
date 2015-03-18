@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace SurveyResults
+﻿namespace SurveyResults
 {
 	static class Program
 	{
@@ -10,14 +6,17 @@ namespace SurveyResults
 
 		static void Main(string[] args)
 		{
-			if (UserInput.AnalyseAll())
+			do
 			{
-				Analyse.All(MaxTrackId);
-			}
-			else
-			{
-				Analyse.Single(MaxTrackId);
-			}
+				if (UserInput.AnalyseAll())
+				{
+					Analysis.All(MaxTrackId);
+				}
+				else
+				{
+					Analysis.Single(MaxTrackId);
+				}
+			} while (UserInput.AnalyseAgain());
 		}
 	}
 }

@@ -35,9 +35,9 @@ namespace SurveyResults
 			}
 		}
 
-		public static bool AnalyseAnother()
+		public static bool AnalyseAgain()
 		{
-			Console.Write("Analyse another track? (Y/n) ");
+			Console.Write("Would you like to carry out another analysis? (Y/n) ");
 			return Console.ReadLine().ToLower().Equals("y");
 		}
 	}
