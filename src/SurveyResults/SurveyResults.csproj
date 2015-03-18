@@ -51,12 +51,14 @@
     <Compile Include="Colour.cs" />
     <Compile Include="ConsoleUi.cs" />
     <Compile Include="DataForTrack.cs" />
+    <Compile Include="IUserInterface.cs" />
     <Compile Include="ParseData.cs" />
     <Compile Include="ParseApi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrackData.cs" />
-    <Compile Include="UserInput.cs" />
+    <Compile Include="UserInteraction.cs" />
+    <Compile Include="Validator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

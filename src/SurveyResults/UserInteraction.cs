@@ -2,27 +2,28 @@
 
 namespace SurveyResults
 {
-	public class UserInput
+	public class UserInteraction
 	{
-		private IUserInterface _consoleUi;
+		private readonly IUserInterface _userInterface;
+		private readonly Validator _validator;
 
-		public UserInput(IUserInterface consoleUi)
+		public UserInteraction(IUserInterface userInterface, Validator validator)
 		{
-			_consoleUi = consoleUi;
+			_userInterface = userInterface;
+			_validator = validator;
 		}
 
-		public int GetTrackId(int maxTrackId)
+		public int GetTrackId()
 		{
-			bool validId = false;
-			int trackId = 0;
-			while (!validId)
+			while (true)
 			{
-				Console.WriteLine("Which track would you like to analyse?");
-				validId = (int.TryParse(_consoleUi.ReadLine(), out trackId) && trackId <= maxTrackId);
-				if (!validId)
-					Console.WriteLine("Sorry, that's not a valid ID");
+				int trackId;
+				_userInterface.AskForTrackId();
+				var input = _userInterface.ReadLine();
+				if (_validator.ValidateUserInputAndValidateTrackId(input, out trackId))
+					return trackId;
+				_userInterface.NotifyInvalidTrackId();
 			}
-			return trackId;
 		}
 
 		public bool AnalyseAll()
@@ -47,9 +48,5 @@ namespace SurveyResults
 			Console.Write("Would you like to carry out another analysis? (Y/n) ");
 			return Console.ReadLine().ToLower().Equals("y");
 		}
-	}
-	public interface IUserInterface
-	{
-		string ReadLine();
 	}
 }

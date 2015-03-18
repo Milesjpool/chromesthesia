@@ -6,18 +6,20 @@
 
 		static void Main(string[] args)
 		{
-			var userInput = new UserInput(new ConsoleUi());
+			var userInterface = new ConsoleUi();
+			var validator = new Validator(MaxTrackId);
+			var interaction = new UserInteraction(userInterface, validator);
 			do
 			{
-				if (userInput.AnalyseAll())
+				if (interaction.AnalyseAll())
 				{
 					Analysis.All(MaxTrackId);
 				}
 				else
 				{
-					Analysis.Single(MaxTrackId, userInput);
+					Analysis.Single(interaction);
 				}
-			} while (userInput.AnalyseAgain());
+			} while (interaction.AnalyseAgain());
 		}
 	}
 }
