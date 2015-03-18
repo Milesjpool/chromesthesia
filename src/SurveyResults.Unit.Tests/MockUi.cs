@@ -5,7 +5,7 @@ namespace SurveyResults.Unit.Tests
 {
 	class MockUi : IUserInterface
 	{
-		private List<string> _userInputs = new List<string> {"0"};
+		private List<string> _userInputs = new List<string> { "0" };
 		private int _inputElement;
 		public bool NotifiedOfInvalidId { get; private set; }
 		public bool AskedForTrackId { get; private set; }
@@ -24,15 +24,30 @@ namespace SurveyResults.Unit.Tests
 			Console.WriteLine(input);
 			return input;
 		}
-		
+
+		public void AskToAnalyseAgain()
+		{
+			throw new NotImplementedException();
+		}
+
 		public void NotifyInvalidTrackId()
 		{
 			NotifiedOfInvalidId = true;
 		}
 
-		public void AskForTrackId()
+		public void NotifyInvalidResponse()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void AskWhichTrack()
 		{
 			AskedForTrackId = true;
+		}
+
+		public void AskHowManyTracks()
+		{
+			throw new NotImplementedException();
 		}
 
 		public void MockUserInput(List<string> userInput)

@@ -3,7 +3,10 @@
 	public interface IUserInterface
 	{
 		string ReadLine();
+		void AskWhichTrack();
+		void AskHowManyTracks();
+		void AskToAnalyseAgain();
 		void NotifyInvalidTrackId();
-		void AskForTrackId();
+		void NotifyInvalidResponse();
 	}
 }

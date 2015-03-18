@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Nancy.Json;
+using System.Web.Script.Serialization;
 
 namespace SurveyResults
 {

@@ -15,7 +15,7 @@ namespace SurveyResults
 			_results = new TrackData(trackId).Results();
 		}
 
-		public void Verbose()
+		public void PrintVerbose()
 		{
 			Divider();
 			TrackHeader(_trackId, _results);

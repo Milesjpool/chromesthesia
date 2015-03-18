@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using NUnit.Framework;
 
 namespace SurveyResults.Unit.Tests
@@ -14,7 +13,7 @@ namespace SurveyResults.Unit.Tests
 		public void Setup()
 		{
 			_console = new MockUi();
-			_validator = new Validator(int.MaxValue);
+			_validator = new Validator();
 		}
 
 		[Test]

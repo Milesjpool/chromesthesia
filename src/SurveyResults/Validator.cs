@@ -1,19 +1,26 @@
-﻿namespace SurveyResults
+﻿using System.Collections.Generic;
+using System.Configuration;
+
+namespace SurveyResults
 {
 	public class Validator
 	{
 		private readonly int _maxId;
 
-		public Validator(int maxId)
-		{
-			_maxId = maxId;
+		public Validator(){
+			_maxId = int.Parse(ConfigurationManager.AppSettings["NumTracks"]);
+			
 		}
 
-		public bool ValidateUserInputAndValidateTrackId(string userInput, out int trackId)
+		public bool IsValidTrackId(int trackId)
 		{
-			var isInteger = int.TryParse(userInput, out trackId);
-			var isInRange = (trackId >= 0) && (trackId <= _maxId);
-			return isInteger && isInRange;
+			return (trackId >= 0) && (trackId <= _maxId);
+		}
+
+		public bool IsYes(string input)
+		{
+			var affirmative = new List<string> {"y", "yes", "yep", "yeah", "yup", "si", "oui", "ja"};
+			return affirmative.Contains(input.ToLower());
 		}
 	}
 }

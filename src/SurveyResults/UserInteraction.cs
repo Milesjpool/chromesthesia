@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SurveyResults
+﻿namespace SurveyResults
 {
 	public class UserInteraction
 	{
@@ -18,35 +16,33 @@ namespace SurveyResults
 			while (true)
 			{
 				int trackId;
-				_userInterface.AskForTrackId();
+				_userInterface.AskWhichTrack();
 				var input = _userInterface.ReadLine();
-				if (_validator.ValidateUserInputAndValidateTrackId(input, out trackId))
+				if (int.TryParse(input, out trackId) && _validator.IsValidTrackId(trackId))
 					return trackId;
 				_userInterface.NotifyInvalidTrackId();
 			}
 		}
 
-		public bool AnalyseAll()
+		public IAnalysis GetAnalysisType()
 		{
 			while (true)
 			{
-				Console.WriteLine("Would you like to:");
-				Console.WriteLine("1. Analyse a single track?");
-				Console.WriteLine("2. Analyse all tracks?");
-				Console.Write("> ");
-				var input = Console.ReadLine();
+				_userInterface.AskHowManyTracks();
+				var input = _userInterface.ReadLine();
 				if (input.Equals("1"))
-					return false;
+					return new SingleAnalysis(this);
 				if (input.Equals("2"))
-					return true;
-				Console.WriteLine("Sorry, that's not a valid answer.");
+					return new AllAnalysis();
+				_userInterface.NotifyInvalidResponse();
 			}
 		}
 
-		public bool AnalyseAgain()
+		public bool GetWhetherToAnalyseAgain()
 		{
-			Console.Write("Would you like to carry out another analysis? (Y/n) ");
-			return Console.ReadLine().ToLower().Equals("y");
+			_userInterface.AskToAnalyseAgain();
+			var input = _userInterface.ReadLine();
+			return _validator.IsYes(input);
 		}
 	}
 }
