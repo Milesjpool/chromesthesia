@@ -9,6 +9,11 @@ namespace SurveyResults
 			return Console.ReadLine();
 		}
 
+		public void WaitForInteraction()
+		{
+			Console.ReadKey();
+		}
+
 		public void AskWhichTrack()
 		{
 			Console.WriteLine("Which track would you like to analyse?");
@@ -19,6 +24,7 @@ namespace SurveyResults
 			Console.WriteLine("Would you like to:");
 			Console.WriteLine("1. Analyse a single track?");
 			Console.WriteLine("2. Analyse all tracks?");
+			Console.WriteLine("3. Analyse all tracks? (Individually)");
 			Console.Write("> ");
 		}
 
@@ -35,6 +41,19 @@ namespace SurveyResults
 		public void NotifyInvalidResponse()
 		{
 			Console.WriteLine("Sorry, that's not a valid answer.");
+		}
+
+		public void EasterEgg()
+		{
+				Console.WriteLine("  ,________");
+				Console.WriteLine("  |        \\");
+				Console.WriteLine("  |         \\");
+				Console.WriteLine("  |________  \\");
+				Console.WriteLine("       /     /");
+				Console.WriteLine("      /     /");
+				Console.WriteLine("      \\    /");
+				Console.WriteLine("       \\  /");
+				Console.WriteLine("        \\/");
 		}
 	}
 }

@@ -1,4 +1,6 @@
-﻿namespace SurveyResults
+﻿using SurveyResults.Analysis;
+
+namespace SurveyResults
 {
 	public class UserInteraction
 	{
@@ -34,6 +36,10 @@
 					return new SingleAnalysis(this);
 				if (input.Equals("2"))
 					return new AllAnalysis();
+				if (input.Equals("3"))
+					return new SlowAnalysis(_userInterface);
+				if (input.Equals("7"))
+					_userInterface.EasterEgg();
 				_userInterface.NotifyInvalidResponse();
 			}
 		}

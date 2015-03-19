@@ -25,6 +25,11 @@ namespace SurveyResults.Unit.Tests
 			return input;
 		}
 
+		public void WaitForInteraction()
+		{
+			throw new NotImplementedException();
+		}
+
 		public void AskToAnalyseAgain()
 		{
 			throw new NotImplementedException();
@@ -36,6 +41,11 @@ namespace SurveyResults.Unit.Tests
 		}
 
 		public void NotifyInvalidResponse()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void EasterEgg()
 		{
 			throw new NotImplementedException();
 		}

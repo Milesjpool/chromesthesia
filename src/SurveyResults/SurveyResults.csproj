@@ -58,19 +58,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnalysisService.cs" />
-    <Compile Include="Colour.cs" />
-    <Compile Include="ConsoleUi.cs" />
-    <Compile Include="DataForTrack.cs" />
-    <Compile Include="IAnalysis.cs" />
-    <Compile Include="IUserInterface.cs" />
-    <Compile Include="ParseData.cs" />
-    <Compile Include="ParseApi.cs" />
+    <Compile Include="Analysis\AllAnalysis.cs" />
+    <Compile Include="Analysis\AnalysisService.cs" />
+    <Compile Include="Data Handling\Calculate.cs" />
+    <Compile Include="Data Handling\Colour.cs" />
+    <Compile Include="User Interaction\ConsoleUi.cs" />
+    <Compile Include="Data Handling\DataForTrack.cs" />
+    <Compile Include="Analysis\IAnalysis.cs" />
+    <Compile Include="User Interaction\IUserInterface.cs" />
+    <Compile Include="Data Handling\ParseData.cs" />
+    <Compile Include="Data Handling\ParseApi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrackData.cs" />
-    <Compile Include="UserInteraction.cs" />
-    <Compile Include="Validator.cs" />
+    <Compile Include="Analysis\SingleAnalysis.cs" />
+    <Compile Include="Data Handling\TrackData.cs" />
+    <Compile Include="Analysis\SlowAnalysis.cs" />
+    <Compile Include="User Interaction\UserInteraction.cs" />
+    <Compile Include="User Interaction\Validator.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

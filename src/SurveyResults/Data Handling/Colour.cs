@@ -22,6 +22,10 @@ namespace SurveyResults
 			_blue = result.Blueness;
 		}
 
+		public int Redness { get { return _red; } }
+		public int Greenness { get { return _green; } }
+		public int Blueness { get { return _blue; } }
+
 		public override string ToString()
 		{
 			var redStr = PadToThree(_red);
@@ -37,7 +41,7 @@ namespace SurveyResults
 
 		public int Value
 		{
-			get { return ((_red * 100) + (_green * 10) + _blue); }
+			get { return ((_red * 1000000) + (_green * 1000) + _blue); }
 		}
 	}
 }
