@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SurveyResults.Analysis;
 
 namespace SurveyResults.Unit.Tests
 {
@@ -46,6 +47,11 @@ namespace SurveyResults.Unit.Tests
 		}
 
 		public void EasterEgg()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void AskWhichOutputType(IAnalysis analysis)
 		{
 			throw new NotImplementedException();
 		}

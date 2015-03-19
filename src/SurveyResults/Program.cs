@@ -1,4 +1,6 @@
-﻿namespace SurveyResults
+﻿using SurveyResults.Analysis;
+
+namespace SurveyResults
 {
 	static class Program
 	{

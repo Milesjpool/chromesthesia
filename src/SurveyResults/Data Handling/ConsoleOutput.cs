@@ -4,14 +4,14 @@ using System.Linq;
 
 namespace SurveyResults
 {
-	class DataForTrack
+	class ConsoleOutput
 	{
 		private readonly int _trackId;
 		private readonly IList<Result> _results;
 		private readonly Calculate _calculate;
 		private readonly IEnumerable<Colour> _colours;
 
-		public DataForTrack(int trackId)
+		public ConsoleOutput(int trackId)
 		{
 			_trackId = trackId;
 			_results = new TrackData(trackId).Results();
@@ -19,38 +19,27 @@ namespace SurveyResults
 			_calculate = new Calculate(_colours);
 		}
 
-		public void PrintVerbose()
-		{
-			Divider();
-			TrackHeader();
-			MeanColour();
-			ExaggeratedMeanColour();
-			ModeColours();
-			RawData();
-			Divider();
-		}
-
-		private void TrackHeader()
+		public void TrackHeader()
 		{
 			var trackString = _results.First(t => t.TrackId == _trackId).TrackString;
 			Console.WriteLine("Analysis for track " + _trackId + ": " + trackString);
 		}
 
-		private void MeanColour()
+		public void MeanColour()
 		{
 			Console.WriteLine();
 			Console.WriteLine("----- MEAN COLOUR -----");
 			Console.WriteLine(_calculate.MeanColour());
 		}
 
-		private void ExaggeratedMeanColour()
+		public void ExaggeratedMeanColour()
 		{
 			Console.WriteLine();
 			Console.WriteLine("-- EXAGGERATED MEAN ---");
 			Console.WriteLine(_calculate.ExaggeratedMean());
 		}
 
-		private void ModeColours()
+		public void ModeColours()
 		{
 			Console.WriteLine();
 			Console.WriteLine("--- MODE COLOUR(S) ----");
@@ -62,7 +51,7 @@ namespace SurveyResults
 			}
 		}
 
-		private void RawData()
+		public void RawData()
 		{
 			Console.WriteLine();
 			Console.WriteLine("------ ALL DATA -------");
@@ -73,7 +62,7 @@ namespace SurveyResults
 			}
 		}
 
-		private static void Divider()
+		public void Divider()
 		{
 			Console.WriteLine("=======================");
 		}

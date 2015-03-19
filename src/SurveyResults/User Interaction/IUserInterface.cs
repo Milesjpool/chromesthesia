@@ -1,4 +1,6 @@
-﻿namespace SurveyResults
+﻿using SurveyResults.Analysis;
+
+namespace SurveyResults
 {
 	public interface IUserInterface
 	{
@@ -10,5 +12,6 @@
 		void NotifyInvalidTrackId();
 		void NotifyInvalidResponse();
 		void EasterEgg();
+		void AskWhichOutputType(IAnalysis analysis);
 	}
 }

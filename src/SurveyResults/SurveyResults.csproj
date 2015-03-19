@@ -62,9 +62,11 @@
     <Compile Include="Analysis\AnalysisService.cs" />
     <Compile Include="Data Handling\Calculate.cs" />
     <Compile Include="Data Handling\Colour.cs" />
+    <Compile Include="Data Handling\VerboseOutput.cs" />
     <Compile Include="User Interaction\ConsoleUi.cs" />
-    <Compile Include="Data Handling\DataForTrack.cs" />
+    <Compile Include="Data Handling\ConsoleOutput.cs" />
     <Compile Include="Analysis\IAnalysis.cs" />
+    <Compile Include="User Interaction\IOutput.cs" />
     <Compile Include="User Interaction\IUserInterface.cs" />
     <Compile Include="Data Handling\ParseData.cs" />
     <Compile Include="Data Handling\ParseApi.cs" />
@@ -73,6 +75,8 @@
     <Compile Include="Analysis\SingleAnalysis.cs" />
     <Compile Include="Data Handling\TrackData.cs" />
     <Compile Include="Analysis\SlowAnalysis.cs" />
+    <Compile Include="User Interaction\SimpleOutput.cs" />
+    <Compile Include="User Interaction\SwatchOutput.cs" />
     <Compile Include="User Interaction\UserInteraction.cs" />
     <Compile Include="User Interaction\Validator.cs" />
   </ItemGroup>

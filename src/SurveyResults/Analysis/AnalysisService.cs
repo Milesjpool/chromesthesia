@@ -1,4 +1,4 @@
-﻿namespace SurveyResults
+﻿namespace SurveyResults.Analysis
 {
 	public class AnalysisService
 	{
@@ -14,7 +14,8 @@
 			do
 			{
 				var analysis = _interaction.GetAnalysisType();
-				analysis.Analyse();
+				var outputType = _interaction.GetOutputType(analysis);
+				analysis.Analyse(outputType);
 			} while (_interaction.GetWhetherToAnalyseAgain());
 		}
 	}

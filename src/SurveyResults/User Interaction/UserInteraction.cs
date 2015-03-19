@@ -13,19 +13,6 @@ namespace SurveyResults
 			_validator = validator;
 		}
 
-		public int GetTrackId()
-		{
-			while (true)
-			{
-				int trackId;
-				_userInterface.AskWhichTrack();
-				var input = _userInterface.ReadLine();
-				if (int.TryParse(input, out trackId) && _validator.IsValidTrackId(trackId))
-					return trackId;
-				_userInterface.NotifyInvalidTrackId();
-			}
-		}
-
 		public IAnalysis GetAnalysisType()
 		{
 			while (true)
@@ -41,6 +28,33 @@ namespace SurveyResults
 				if (input.Equals("7"))
 					_userInterface.EasterEgg();
 				_userInterface.NotifyInvalidResponse();
+			}
+		}
+
+		public IOutput GetOutputType(IAnalysis analysis)
+		{
+			while (true)
+			{
+				_userInterface.AskWhichOutputType(analysis);
+				var input = _userInterface.ReadLine();
+				if (analysis.ValidOutputOption(input))
+					return analysis.GetOutputType(input);
+				if (input.Equals("7"))
+					_userInterface.EasterEgg();
+				_userInterface.NotifyInvalidResponse();
+			}
+		}
+
+		public int GetTrackId()
+		{
+			while (true)
+			{
+				int trackId;
+				_userInterface.AskWhichTrack();
+				var input = _userInterface.ReadLine();
+				if (int.TryParse(input, out trackId) && _validator.IsValidTrackId(trackId))
+					return trackId;
+				_userInterface.NotifyInvalidTrackId();
 			}
 		}
 

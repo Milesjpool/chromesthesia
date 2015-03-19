@@ -1,4 +1,5 @@
 ﻿using System;
+using SurveyResults.Analysis;
 
 namespace SurveyResults
 {
@@ -25,6 +26,13 @@ namespace SurveyResults
 			Console.WriteLine("1. Analyse a single track?");
 			Console.WriteLine("2. Analyse all tracks?");
 			Console.WriteLine("3. Analyse all tracks? (Individually)");
+			Console.Write("> ");
+		}
+
+		public void AskWhichOutputType(IAnalysis analysis)
+		{
+			Console.WriteLine("How would you like to output the results:");
+			analysis.PrintOutputTypes();
 			Console.Write("> ");
 		}
 
