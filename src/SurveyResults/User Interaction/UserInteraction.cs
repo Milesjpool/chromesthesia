@@ -1,4 +1,5 @@
 ﻿using SurveyResults.Analysis;
+using SurveyResults.Outputs;
 
 namespace SurveyResults
 {
@@ -31,7 +32,7 @@ namespace SurveyResults
 			}
 		}
 
-		public IOutput GetOutputType(IAnalysis analysis)
+		public IOutputType GetOutputType(IAnalysis analysis)
 		{
 			while (true)
 			{

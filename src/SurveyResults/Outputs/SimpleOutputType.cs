@@ -1,18 +1,19 @@
-﻿namespace SurveyResults
+﻿using System.Collections.Generic;
+
+namespace SurveyResults.Outputs
 {
-	public class VerboseOutput : IOutput
+	public class SimpleOutputType : IOutputType
 	{
 		private ConsoleOutput _consoleOut;
 
-		public void Print(int trackId)
+		public void Print(IList<Result> results)
 		{
-			_consoleOut = new ConsoleOutput(trackId);
+			_consoleOut = new ConsoleOutput(results);
 			_consoleOut.Divider();
 			_consoleOut.TrackHeader();
 			_consoleOut.MeanColour();
 			_consoleOut.ExaggeratedMeanColour();
 			_consoleOut.ModeColours();
-			_consoleOut.RawData();
 			_consoleOut.Divider();
 		}
 	}

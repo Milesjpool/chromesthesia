@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Web.Script.Serialization;
 
 namespace SurveyResults
 {
@@ -8,11 +10,12 @@ namespace SurveyResults
 	{
 		private const string RootUrl = @"https://api.parse.com/1/classes/Opinion";
 
-		public static string GetDataFor(int trackId)
+		public static List<Result> GetResultsFor(int trackId)
 		{
 			var requestUri = new Uri(RootUrl + "?where%3D%7B%22TrackId%22%3A" + trackId + "%7D");
 			var response = GetResponse(requestUri);
-			return ReadBodyOf(response);
+			var json = ReadBodyOf(response);
+			return new JavaScriptSerializer().Deserialize<ParseData>(json).results;
 		}
 		
 		private static HttpWebResponse GetResponse(Uri url)

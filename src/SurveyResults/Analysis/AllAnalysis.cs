@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using SurveyResults.Outputs;
 
 namespace SurveyResults.Analysis
 {
 	public class AllAnalysis : IAnalysis
 	{
-		public void Analyse(IOutput output)
+		public void Analyse(IOutputType outputType)
 		{
 			int maxTrackId = int.Parse(ConfigurationManager.AppSettings["NumTracks"]);
 			for (int trackId = 0; trackId < maxTrackId; trackId++)
 			{
-				output.Print(trackId);
+				var results = ParseApi.GetResultsFor(trackId);
+				outputType.Print(results);
 			}
 		}
 
@@ -28,14 +30,14 @@ namespace SurveyResults.Analysis
 			return validOptions.Contains(input);
 		}
 
-		public IOutput GetOutputType(string input)
+		public IOutputType GetOutputType(string input)
 		{
 			if (input.Equals("1"))
-				return new SimpleOutput();
+				return new SimpleOutputType();
 			if (input.Equals("2"))
-				return new VerboseOutput();
+				return new VerboseOutputType();
 			if (input.Equals("3"))
-				return new SwatchOutput();
+				return new SwatchOutputType();
 			throw new Exception();
 		}
 	}

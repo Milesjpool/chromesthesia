@@ -6,23 +6,21 @@ namespace SurveyResults
 {
 	class ConsoleOutput
 	{
-		private readonly int _trackId;
 		private readonly IList<Result> _results;
 		private readonly Calculate _calculate;
 		private readonly IEnumerable<Colour> _colours;
 
-		public ConsoleOutput(int trackId)
+		public ConsoleOutput(IList<Result> results)
 		{
-			_trackId = trackId;
-			_results = new TrackData(trackId).Results();
+			_results = results;
 			_colours = _results.Select(r => new Colour(r));
 			_calculate = new Calculate(_colours);
 		}
 
 		public void TrackHeader()
 		{
-			var trackString = _results.First(t => t.TrackId == _trackId).TrackString;
-			Console.WriteLine("Analysis for track " + _trackId + ": " + trackString);
+			var track = _results.First();
+			Console.WriteLine("Analysis for track " + track.TrackId + ": " + track.TrackString);
 		}
 
 		public void MeanColour()

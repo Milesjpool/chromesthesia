@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SurveyResults.Outputs;
 
 namespace SurveyResults.Analysis
 {
@@ -12,10 +13,11 @@ namespace SurveyResults.Analysis
 			_interaction = interaction;
 		}
 
-		public void Analyse(IOutput output)
+		public void Analyse(IOutputType outputType)
 		{
 			var trackId = _interaction.GetTrackId();
-			output.Print(trackId);
+			var results = ParseApi.GetResultsFor(trackId);
+			outputType.Print(results);
 		}
 
 		public void PrintOutputTypes()
@@ -31,14 +33,14 @@ namespace SurveyResults.Analysis
 			return validOptions.Contains(input);
 		}
 
-		public IOutput GetOutputType(string input)
+		public IOutputType GetOutputType(string input)
 		{
 			if (input.Equals("1"))
-				return new SimpleOutput();
+				return new SimpleOutputType();
 			if (input.Equals("2"))
-				return new VerboseOutput();
+				return new VerboseOutputType();
 			if (input.Equals("3"))
-				return new SwatchOutput();
+				return new SwatchOutputType();
 			throw new Exception();
 		}
 	}
