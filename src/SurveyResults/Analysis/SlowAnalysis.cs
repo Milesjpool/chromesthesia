@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace SurveyResults
+namespace SurveyResults.Analysis
 {
 	public class SlowAnalysis : IAnalysis
 	{

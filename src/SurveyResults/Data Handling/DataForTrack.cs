@@ -38,21 +38,24 @@ namespace SurveyResults
 
 		private void MeanColour()
 		{
+			Console.WriteLine();
 			Console.WriteLine("----- MEAN COLOUR -----");
 			Console.WriteLine(_calculate.MeanColour());
 		}
 
 		private void ExaggeratedMeanColour()
 		{
+			Console.WriteLine();
 			Console.WriteLine("-- EXAGGERATED MEAN ---");
-			Console.WriteLine("----- TODO!!!!!!! -----");
+			Console.WriteLine(_calculate.ExaggeratedMean());
 		}
 
 		private void ModeColours()
 		{
-			var modeCount = _calculate.ModeCount();
-			var modeColours = _calculate.ColoursWithNVotes(modeCount);
+			Console.WriteLine();
 			Console.WriteLine("--- MODE COLOUR(S) ----");
+			var modeCount = _calculate.ModeCount();
+			var modeColours = _calculate.ModeColour();
 			foreach (var colour in new Calculate(modeColours).OrderedColours())
 			{
 				Console.WriteLine(modeCount + " votes:	" + colour);
@@ -61,6 +64,7 @@ namespace SurveyResults
 
 		private void RawData()
 		{
+			Console.WriteLine();
 			Console.WriteLine("------ ALL DATA -------");
 			var orderedColours = _calculate.OrderedColours();
 			for (var i = 0; i < orderedColours.Count(); i++)
