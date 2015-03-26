@@ -13,6 +13,11 @@ namespace SurveyResults
 			_colours = colours;
 		}
 
+		public Calculate(TrackData trackData)
+		{
+			_colours = trackData.Results.Select(r => new Colour(r));
+		}
+
 		public List<Colour> OrderedColours()
 		{
 			return new List<Colour>(_colours.OrderBy(c => c.Value));
@@ -26,12 +31,12 @@ namespace SurveyResults
 			return new Colour(meanRed, meanGreen, meanBlue);
 		}
 
-		public Colour ExaggeratedMean()
+		public Colour ExaggeratedMean(int iterations)
 		{
 			var mean = MeanColour();
-			var redness = Extremise(mean.Redness, 1);
-			var greenness = Extremise(mean.Greenness,1);
-			var blueness = Extremise(mean.Blueness,1);
+			var redness = Extremise(mean.Redness, iterations);
+			var greenness = Extremise(mean.Greenness,iterations);
+			var blueness = Extremise(mean.Blueness,iterations);
 			return new Colour(redness, greenness, blueness);
 		}
 

@@ -26,6 +26,11 @@ namespace SurveyResults
 		public int Greenness { get { return _green; } }
 		public int Blueness { get { return _blue; } }
 
+		public string ToHex()
+		{
+			return "#" + _red.ToString("X2") + _green.ToString("X2") + _blue.ToString("X2");
+		}
+
 		public override string ToString()
 		{
 			var redStr = PadToThree(_red);
@@ -42,6 +47,11 @@ namespace SurveyResults
 		public int Value
 		{
 			get { return ((_red * 1000000) + (_green * 1000) + _blue); }
+		}
+
+		public int Shade
+		{
+			get { return (_red + _green + _blue); }
 		}
 	}
 }

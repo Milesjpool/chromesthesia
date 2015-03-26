@@ -10,11 +10,15 @@ namespace SurveyResults.Analysis
 		public void Analyse(IOutputType outputType)
 		{
 			int maxTrackId = int.Parse(ConfigurationManager.AppSettings["NumTracks"]);
+			var allData = new List<TrackData>();
+			var loadingBar = new LoadingBar("Fetching Data", maxTrackId);
+			loadingBar.Start();
 			for (int trackId = 0; trackId < maxTrackId; trackId++)
 			{
-				var results = ParseApi.GetResultsFor(trackId);
-				outputType.Print(results);
+				allData.Add(ParseApi.GetResultsFor(trackId));
+				loadingBar.Next();
 			}
+			outputType.Print(allData);
 		}
 
 		public void PrintOutputTypes()

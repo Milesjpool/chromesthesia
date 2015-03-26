@@ -10,21 +10,21 @@ namespace SurveyResults
 	{
 		private const string RootUrl = @"https://api.parse.com/1/classes/Opinion";
 
-		public static List<Result> GetResultsFor(int trackId)
+		public static TrackData GetResultsFor(int trackId)
 		{
 			var requestUri = new Uri(RootUrl + "?where%3D%7B%22TrackId%22%3A" + trackId + "%7D");
 			var response = GetResponse(requestUri);
 			var json = ReadBodyOf(response);
-			return new JavaScriptSerializer().Deserialize<ParseData>(json).results;
+			return new TrackData(json);
 		}
-		
+
 		private static HttpWebResponse GetResponse(Uri url)
 		{
 			var request = WebRequest.Create(url);
 			request.Method = WebRequestMethods.Http.Get;
 			request.Headers.Add("X-Parse-Application-Id", "LSqmQRHWpRXDusXRfFAPILmeMHBLabJ6KU7LeqJg");
 			request.Headers.Add("X-Parse-REST-API-Key", "D8AyMMrsNCOALIUUAqkiiw0N0leYgs6l2AkDt8iP");
-			return (HttpWebResponse) request.GetResponse();
+			return (HttpWebResponse)request.GetResponse();
 		}
 
 		private static string ReadBodyOf(HttpWebResponse response)
@@ -37,5 +37,17 @@ namespace SurveyResults
 				}
 			}
 		}
+	}
+
+	public class TrackData
+	{
+		private readonly IList<Result> _results;
+
+		public TrackData(string json)
+		{
+			_results = new JavaScriptSerializer().Deserialize<ParseData>(json).results;
+		}
+
+		public IList<Result> Results { get { return _results; } }
 	}
 }

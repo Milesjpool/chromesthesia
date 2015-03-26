@@ -16,8 +16,8 @@ namespace SurveyResults.Analysis
 		public void Analyse(IOutputType outputType)
 		{
 			var trackId = _interaction.GetTrackId();
-			var results = ParseApi.GetResultsFor(trackId);
-			outputType.Print(results);
+			var trackResults = ParseApi.GetResultsFor(trackId);
+			outputType.Print(trackResults);
 		}
 
 		public void PrintOutputTypes()

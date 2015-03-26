@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using SurveyResults.Analysis;
 
 namespace SurveyResults
@@ -62,6 +63,57 @@ namespace SurveyResults
 				Console.WriteLine("      \\    /");
 				Console.WriteLine("       \\  /");
 				Console.WriteLine("        \\/");
+		}
+	}
+
+	public class LoadingBar
+	{
+		private readonly string _label;
+		private int _currentValue;
+		private readonly int _completeValue;
+		private bool _started;
+
+
+		public LoadingBar(string label, int completeValue)
+		{
+			_label = label;
+			_completeValue = completeValue;
+		}
+
+		public void Start()
+		{
+			_started = true;
+			_currentValue = 0;
+			PrintLevel(false);
+		}
+
+		public void Next()
+		{
+			if (!_started) throw new LoadingNotStartedException();
+			_currentValue++;
+			PrintLevel(true);
+			if (_currentValue == _completeValue) _started = false;
+		}
+		
+		private void PrintLevel(bool overwrite)
+		{
+			var length = 20;
+			var bar = BuildProgressBar(length);
+			if (overwrite)
+			{
+				Console.SetCursorPosition(0, Console.CursorTop-1);
+			}
+			Console.WriteLine(bar);
+		}
+
+		private string BuildProgressBar(int length)
+		{
+			var progress = (_currentValue * length) / _completeValue;
+			var builder = new StringBuilder(_label + " [");
+			builder.Append('=',progress);
+			builder.Append(' ', (length - progress));
+			builder.Append("]");
+			return builder.ToString();
 		}
 	}
 }

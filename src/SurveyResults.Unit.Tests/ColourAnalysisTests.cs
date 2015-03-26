@@ -44,7 +44,7 @@ namespace SurveyResults.Unit.Tests
 			{
 				var colour = new Colour(i, i, i);
 				var calculate = new Calculate(new List<Colour> { colour });
-				var exaggeratedMean = calculate.ExaggeratedMean();
+				var exaggeratedMean = calculate.ExaggeratedMean(1);
 				Assert.That(exaggeratedMean.Redness, Is.EqualTo(exaggeratedMean.Blueness));
 				Assert.That(exaggeratedMean.Redness, Is.EqualTo(exaggeratedMean.Greenness));
 				Assert.That(exaggeratedMean.Redness, Is.AtLeast(0));

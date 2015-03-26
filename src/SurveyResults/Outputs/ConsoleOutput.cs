@@ -2,25 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SurveyResults
+namespace SurveyResults.Outputs
 {
 	class ConsoleOutput
 	{
-		private readonly IList<Result> _results;
+		private readonly Result _track;
 		private readonly Calculate _calculate;
-		private readonly IEnumerable<Colour> _colours;
 
-		public ConsoleOutput(IList<Result> results)
+		public ConsoleOutput(TrackData data)
 		{
-			_results = results;
-			_colours = _results.Select(r => new Colour(r));
-			_calculate = new Calculate(_colours);
+			_track = data.Results.First();
+			_calculate = new Calculate(data);
 		}
 
 		public void TrackHeader()
 		{
-			var track = _results.First();
-			Console.WriteLine("Analysis for track " + track.TrackId + ": " + track.TrackString);
+			Console.WriteLine("Analysis for track " + _track.TrackId + ": " + _track.TrackString);
 		}
 
 		public void MeanColour()
@@ -34,7 +31,7 @@ namespace SurveyResults
 		{
 			Console.WriteLine();
 			Console.WriteLine("-- EXAGGERATED MEAN ---");
-			Console.WriteLine(_calculate.ExaggeratedMean());
+			Console.WriteLine(_calculate.ExaggeratedMean(1));
 		}
 
 		public void ModeColours()

@@ -6,9 +6,17 @@ namespace SurveyResults.Outputs
 	{
 		private ConsoleOutput _consoleOut;
 
-		public void Print(IList<Result> results)
+		public void Print(IList<TrackData> allData)
 		{
-			_consoleOut = new ConsoleOutput(results);
+			foreach (var trackData in allData)
+			{
+				Print(trackData);
+			}
+		}
+
+		public void Print(TrackData data)
+		{
+			_consoleOut = new ConsoleOutput(data);
 			_consoleOut.Divider();
 			_consoleOut.TrackHeader();
 			_consoleOut.MeanColour();
