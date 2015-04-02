@@ -7,6 +7,13 @@ namespace SurveyResults.Analysis
 {
 	public class AllAnalysis : IAnalysis
 	{
+		private readonly UserInteraction _interaction;
+
+		public AllAnalysis(UserInteraction interaction)
+		{
+			_interaction = interaction;
+		}
+
 		public void Analyse(IOutputType outputType)
 		{
 			int maxTrackId = int.Parse(ConfigurationManager.AppSettings["NumTracks"]);
@@ -41,7 +48,7 @@ namespace SurveyResults.Analysis
 			if (input.Equals("2"))
 				return new VerboseOutputType();
 			if (input.Equals("3"))
-				return new SwatchOutputType();
+				return new SwatchOutputType(_interaction);
 			throw new Exception();
 		}
 	}

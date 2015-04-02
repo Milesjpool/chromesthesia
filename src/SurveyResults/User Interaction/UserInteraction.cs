@@ -23,7 +23,7 @@ namespace SurveyResults
 				if (input.Equals("1"))
 					return new SingleAnalysis(this);
 				if (input.Equals("2"))
-					return new AllAnalysis();
+					return new AllAnalysis(this);
 				if (input.Equals("3"))
 					return new SlowAnalysis(_userInterface);
 				if (input.Equals("7"))
@@ -53,7 +53,7 @@ namespace SurveyResults
 				int trackId;
 				_userInterface.AskWhichTrack();
 				var input = _userInterface.ReadLine();
-				if (int.TryParse(input, out trackId) && _validator.IsValidTrackId(trackId))
+				if (_validator.IsInteger(input, out trackId) && _validator.IsValidTrackId(trackId))
 					return trackId;
 				_userInterface.NotifyInvalidTrackId();
 			}
@@ -64,6 +64,26 @@ namespace SurveyResults
 			_userInterface.AskToAnalyseAgain();
 			var input = _userInterface.ReadLine();
 			return _validator.IsYes(input);
+		}
+
+		public string GetSaveSwatchLocation()
+		{
+			const string location = "C://swatch.jpg";
+			_userInterface.NotifySavingTo(location);
+			return location;
+		}
+
+		public int GetNumberOfIterations()
+		{
+			while (true)
+			{
+				int iterations;
+				_userInterface.AskHowManyIterations();
+				var input = _userInterface.ReadLine();
+				if (_validator.IsInteger(input, out iterations) && _validator.IsReasonable(iterations))
+					return iterations;
+				_userInterface.NotifyInvalidInterations();
+			}
 		}
 	}
 }

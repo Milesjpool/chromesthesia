@@ -56,6 +56,21 @@ namespace SurveyResults.Unit.Tests
 			throw new NotImplementedException();
 		}
 
+		public void NotifySavingTo(string location)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void AskHowManyIterations()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void NotifyInvalidInterations()
+		{
+			throw new NotImplementedException();
+		}
+
 		public void AskWhichTrack()
 		{
 			AskedForTrackId = true;

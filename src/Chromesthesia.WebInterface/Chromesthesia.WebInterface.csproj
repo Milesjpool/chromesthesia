@@ -257,7 +257,10 @@
     <Compile Include="AcousticbrainzHelpers\AcousticbrainzExtensions.cs" />
     <Compile Include="AcousticbrainzHelpers\AcousticbrainzResult.cs" />
     <Compile Include="AcousticbrainzHelpers\Analysis.cs" />
+    <Compile Include="Chrometisation\ColorHandling.cs" />
     <Compile Include="Chrometisation\ColourCalculator.cs" />
+    <Compile Include="Chrometisation\MetadataAnalysis.cs" />
+    <Compile Include="Chrometisation\WeightedColour.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Exceptions\InvalidMusicbrainzIdException.cs" />
     <Compile Include="Exceptions\Invalid7DigitalIdException.cs" />

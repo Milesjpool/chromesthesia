@@ -31,11 +31,13 @@ namespace Chromesthesia.WebInterface.AcousticbrainzHelpers
 
 			public class Danceability
 			{
+				public double probability { get; set; }
 				public string value { get; set; }
 			}
 
 			public class Gender
 			{
+				public double probability { get; set; }
 				public string value { get; set; }
 			}
 
@@ -61,54 +63,76 @@ namespace Chromesthesia.WebInterface.AcousticbrainzHelpers
 
 			public class MoodAcoustic
 			{
+				public double probability { get; set; }
+				public string value { get; set; }
 			}
 
 
 			public class MoodAggressive
 			{
+				public double probability { get; set; }
+				public string value { get; set; }
 			}
 
 
 			public class MoodElectronic
 			{
+				public double probability { get; set; }
+				public string value { get; set; }
 			}
 
 
 			public class MoodHappy
 			{
+				public double probability { get; set; }
+				public string value { get; set; }
 			}
 
 
 			public class MoodParty
 			{
+				public double probability { get; set; }
+				public string value { get; set; }
 			}
 
 
 			public class MoodRelaxed
 			{
+				public double probability { get; set; }
+				public string value { get; set; }
 			}
 
 
 			public class MoodSad
 			{
+				public double probability { get; set; }
+				public string value { get; set; }
 			}
 
 
 			public class MoodsMirex
 			{
+				public double probability { get; set; }
+				public string value { get; set; }
 			}
 
 			public class Timbre
 			{
+				public double probability { get; set; }
+				public string value { get; set; }
 			}
 
 
 			public class TonalAtonal
 			{
+				public double probability { get; set; }
+				public string value { get; set; }
 			}
 
 			public class VoiceInstrumental
 			{
+				public double probability { get; set; }
+				public string value { get; set; }
 			}
 		}
 
@@ -134,6 +158,7 @@ namespace Chromesthesia.WebInterface.AcousticbrainzHelpers
 				public string[] musicbrainz_album_type;
 				public string[] artist;
 				public string[] title;
+				public string[] album;
 			}
 		}
 

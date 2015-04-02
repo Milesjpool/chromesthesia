@@ -22,5 +22,15 @@ namespace SurveyResults
 			var affirmative = new List<string> {"y", "yes", "yep", "yeah", "yup", "si", "oui", "ja"};
 			return affirmative.Contains(input.ToLower());
 		}
+
+		public bool IsInteger(string input, out int trackId)
+		{
+			return int.TryParse(input, out trackId);
+		}
+
+		public bool IsReasonable(int iterations)
+		{
+			return (iterations <= 100);
+		}
 	}
 }

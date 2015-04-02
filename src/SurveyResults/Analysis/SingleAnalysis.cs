@@ -40,7 +40,7 @@ namespace SurveyResults.Analysis
 			if (input.Equals("2"))
 				return new VerboseOutputType();
 			if (input.Equals("3"))
-				return new SwatchOutputType();
+				return new SwatchOutputType(_interaction);
 			throw new Exception();
 		}
 	}

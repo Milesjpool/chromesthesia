@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Chromesthesia.WebInterface.Models;
+﻿using Chromesthesia.WebInterface.Models;
 using Chromesthesia.WebInterface.Parsing;
 using Chromesthesia.WebInterface.Services;
 using NUnit.Framework;

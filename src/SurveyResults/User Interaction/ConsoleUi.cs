@@ -37,6 +37,21 @@ namespace SurveyResults
 			Console.Write("> ");
 		}
 
+		public void NotifySavingTo(string location)
+		{
+			Console.WriteLine("Saving swatch to: \"" + location + "\"");
+		}
+
+		public void AskHowManyIterations()
+		{
+			Console.WriteLine("How many iterations would you like to display?");
+		}
+
+		public void NotifyInvalidInterations()
+		{
+			Console.WriteLine("Woah, that's not a valid number.");
+		}
+
 		public void AskToAnalyseAgain()
 		{
 			Console.Write("Would you like to carry out another analysis? (Y/n) ");

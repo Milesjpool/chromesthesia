@@ -6,13 +6,20 @@ namespace SurveyResults.Outputs
 {
 	public class SwatchOutputType : IOutputType
 	{
+		private readonly UserInteraction _interaction;
 		private Bitmap _swatch;
 		private Graphics _graphics;
-		private const int Iterations = 10;
+		private readonly int _iterations;
 		private const int SquareSize = 50;
 		private const int TextWidth = 200;
 		private const int TextBorder = 5;
 
+
+		public SwatchOutputType(UserInteraction interaction)
+		{
+			_interaction = interaction;
+			_iterations = _interaction.GetNumberOfIterations();
+		}
 
 		public void Print(IList<TrackData> allData)
 		{
@@ -38,7 +45,7 @@ namespace SurveyResults.Outputs
 
 		private void InitialiseGraphics(int numberOfTracks)
 		{
-			const int width = TextWidth + (Iterations * SquareSize);
+			int width = TextWidth + (_iterations * SquareSize);
 			var height = numberOfTracks * SquareSize;
 			_swatch = new Bitmap(width, height);
 			_graphics = Graphics.FromImage(_swatch);
@@ -55,7 +62,8 @@ namespace SurveyResults.Outputs
 
 		private void SaveSwatchToFile()
 		{
-			_swatch.Save("C://test.jpg");
+			var location = _interaction.GetSaveSwatchLocation();
+			_swatch.Save(location);
 		}
 
 		private void WriteTrackInfo(TrackData trackData, int yOffset)
@@ -71,7 +79,7 @@ namespace SurveyResults.Outputs
 
 		private void DrawExaggeratedMeans(Calculate calculate, int yOffset)
 		{
-			for (int i = 0; i < Iterations; i++)
+			for (int i = 0; i < _iterations; i++)
 			{
 				var colour = calculate.ExaggeratedMean(i);
 				var xOffset = TextWidth + (i*SquareSize);

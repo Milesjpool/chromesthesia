@@ -13,5 +13,8 @@ namespace SurveyResults
 		void NotifyInvalidResponse();
 		void EasterEgg();
 		void AskWhichOutputType(IAnalysis analysis);
+		void NotifySavingTo(string location);
+		void AskHowManyIterations();
+		void NotifyInvalidInterations();
 	}
 }

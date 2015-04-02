@@ -3,7 +3,6 @@ using System.Net;
 using Chromesthesia.WebInterface.HttpHelpers;
 using Chromesthesia.WebInterface.Interfaces;
 using Chromesthesia.WebInterface.Parsing;
-using Nancy.Json;
 
 namespace Chromesthesia.WebInterface.AcousticbrainzHelpers
 {
