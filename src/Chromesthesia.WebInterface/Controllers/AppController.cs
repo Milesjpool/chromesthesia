@@ -1,3 +1,4 @@
+using System.Web.Helpers;
 using Chromesthesia.WebInterface.Services;
 
 namespace Chromesthesia.WebInterface.Controllers
@@ -25,11 +26,18 @@ namespace Chromesthesia.WebInterface.Controllers
 			return _routes.View["Views/Status.cshtml", model];
 		}
 
-		public dynamic Chrometise(dynamic parameters)
+		public dynamic Chrometise(dynamic parameters, bool newChrometiser)
 		{
-			var controllerService = new ChrometiseControllerService(parameters);
+			var controllerService = new ChrometiseControllerService(parameters, newChrometiser);
 			var model = controllerService.GetChrometiseModel();
 			return _routes.View["Views/Chrometise.cshtml", model];
+		}
+
+		public dynamic Hexercise(dynamic parameters)
+		{
+			var controllerService = new HexerciseControllerService(parameters);
+			var model = controllerService.GetHexerciseModel();
+			return Json.Encode(model);
 		}
 
 		public dynamic Analyse(dynamic parameters)

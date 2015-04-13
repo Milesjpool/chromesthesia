@@ -34,9 +34,14 @@ namespace SurveyResults
 		public Colour ExaggeratedMean(int iterations)
 		{
 			var mean = MeanColour();
+			return ExaggerateColour(iterations, mean);
+		}
+
+		private Colour ExaggerateColour(int iterations, Colour mean)
+		{
 			var redness = Extremise(mean.Redness, iterations);
-			var greenness = Extremise(mean.Greenness,iterations);
-			var blueness = Extremise(mean.Blueness,iterations);
+			var greenness = Extremise(mean.Greenness, iterations);
+			var blueness = Extremise(mean.Blueness, iterations);
 			return new Colour(redness, greenness, blueness);
 		}
 

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Chromesthesia.WebInterface.AcousticbrainzHelpers;
@@ -12,6 +13,12 @@ namespace Chromesthesia.WebInterface.Chrometisation
 		public MetadataAnalysis(Analysis analysis)
 		{
 			_analysis = analysis;
+		}
+
+		public List<Color> GetColours()
+		{
+			var aggregatedMetadata = new MetadataAnalysis(_analysis).Aggregate();
+			return ColorHandling.GetColoursIn(aggregatedMetadata);
 		}
 
 		public List<string> Aggregate()

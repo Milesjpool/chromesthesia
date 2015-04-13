@@ -1,42 +1,44 @@
 using System.Drawing;
 using Chromesthesia.WebInterface.AcousticbrainzHelpers;
-using Chromesthesia.WebInterface.Chrometisation;
 using Chromesthesia.WebInterface.Models;
+using Chromesthesia.WebInterface.Services;
 
-namespace Chromesthesia.WebInterface.Services
+namespace Chromesthesia.WebInterface.Controllers
 {
-	public class ChrometiseControllerService
+	public class HexerciseControllerService
 	{
 		private readonly InputParser _inputParser;
 		private readonly Analysis _analysis;
-		private readonly IColourCalculator _colourCalculator;
+		private readonly PredominantPropertyColourCalculator _colourCalculator;
+		private Color _trackColour;
 
-		public ChrometiseControllerService(dynamic parameters, bool newChrometiser)
+		public HexerciseControllerService(dynamic parameters)
 		{
 			_inputParser = new InputParser(parameters);
 			_analysis = GetAcousticbrainzAnalysis();
-			if (newChrometiser) _colourCalculator = new PredominantPropertyColourCalculator();
-			else _colourCalculator = new AllDataColourCalculator();
+			_colourCalculator = new PredominantPropertyColourCalculator();
+			_trackColour = _colourCalculator.From(_analysis);
 		}
 
-		public ChrometiseModel GetChrometiseModel()
+		public HexerciseModel GetHexerciseModel()
 		{
-			return new ChrometiseModel
+			return new HexerciseModel
 				{
 					Artist = _analysis.metadata.tags.artist[0],
 					Track = _analysis.metadata.tags.title[0],
-					HtmlColour = HtmlColour()
+					HtmlColour = HtmlColour(),
+					RgbColour = TrackColour()
 				};
+		}
+
+		private string TrackColour()
+		{
+			return "RGB(" + _trackColour.R + ", " + _trackColour.G + ", " + _trackColour.B + ")";
 		}
 
 		private string HtmlColour()
 		{
-			return ToHex(TrackColour());
-		}
-
-		private Color TrackColour()
-		{
-			return _colourCalculator.From(_analysis);
+			return ToHex(_trackColour);
 		}
 
 		private Analysis GetAcousticbrainzAnalysis()
