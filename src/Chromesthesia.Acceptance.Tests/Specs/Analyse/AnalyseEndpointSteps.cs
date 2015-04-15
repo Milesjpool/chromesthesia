@@ -49,7 +49,8 @@ namespace Chromesthesia.Acceptance.Tests.Specs.Analyse
 
 		protected void Then_the_page_should_display_an_error_message()
 		{
-			_driver.CheckResponseContains(string.Format("'{0}' is not a valid Musicbrainz ID", _id));
+			_driver.CheckResponseContains(_id);
+			_driver.CheckResponseContains("This is not a valid Musicbrainz track ID");
 		}
 	}
 }
