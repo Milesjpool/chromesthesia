@@ -2,9 +2,13 @@ using Chromesthesia.WebInterface.Parsing;
 
 namespace Chromesthesia.WebInterface.Models
 {
-	public class Track
+	public class ExampleTrack
 	{
-		public Mbid Mbid { get; set; }
+		public ExampleTrack(string id)
+		{
+			Id7D = new SevenDigitalId(id);
+		}
+
 		public SevenDigitalId Id7D { get; set; }
 	}
 }

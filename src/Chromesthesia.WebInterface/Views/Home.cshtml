@@ -7,14 +7,29 @@
     <h1>Welcome to Chromesthesia!</h1>
     <p />
     <p />
-    Chrometise 7D:
-    <p/>
-        @foreach (var track in Model.Tracks)
+    Example 7Digital IDs:
+    <br />
+    <table>
+        @foreach (var track in Model.ExampleTracks)
         {
-            <a href='/chrometise/7d/@track.Id7D'>
-                @track.Id7D
-            </a>
-            <br/>
+            <tr>
+                <td>@track.Id7D</td>
+                <td>&rarr;</td>
+                <td><a href='/chrometise/7d/@track.Id7D/old'>OLD</a></td>
+                <td><a href='/chrometise/7d/@track.Id7D'>NEW</a></td>
+            </tr>
         }
+    </table>
+    <p />
+    Or search for a track :<br />
+    <input type="text" value="COMING SOON!" disabled="disabled"/>
+    <button type="button" disabled="disabled">Search!</button>
+    @foreach (var Result in Model.SearchResults)
+    {
+        <a href='/chrometise/7d/@Result.Track.Id'>
+            @Result.Track.Title - @Result.Track.Artist.Name
+        </a>
+        <br />
+    }
 </body>
 </html>

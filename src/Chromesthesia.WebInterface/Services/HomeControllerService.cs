@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Chromesthesia.WebInterface.Models;
-using Chromesthesia.WebInterface.Parsing;
+using SevenDigital.Api.Schema.Tracks;
+using SevenDigital.Api.Wrapper;
 
 namespace Chromesthesia.WebInterface.Services
 {
@@ -10,24 +11,28 @@ namespace Chromesthesia.WebInterface.Services
 		{
 			return new HomeModel
 				{
-					Tracks = Tracks(),
+					ExampleTracks = ExampleTracks(),
+					SearchResults = SearchResults()
 				};
 		}
 
-		private List<Track> Tracks()
+		private List<TrackSearchResult> SearchResults()
 		{
-			var id1 = new SevenDigitalId("21849720");
-			var id2 = new SevenDigitalId("5971578");
-			var id3 = new SevenDigitalId("1181138");
-			var id4 = new SevenDigitalId("487885");
-			var id5 = new SevenDigitalId("20505133");
-			return new List<Track>
+			return new List<TrackSearchResult>();
+		}
+
+		private List<ExampleTrack> ExampleTracks()
+		{
+			return new List<ExampleTrack>
 				{
-					new Track {Id7D = id1, Mbid = id1.ToMbid()},
-					new Track {Id7D = id2, Mbid = id2.ToMbid()},
-					new Track {Id7D = id3, Mbid = id3.ToMbid()},
-					new Track {Id7D = id4, Mbid = id4.ToMbid()},
-					new Track {Id7D = id5, Mbid = id5.ToMbid()},
+					new ExampleTrack("21849720"),
+					new ExampleTrack("5971578"),
+					new ExampleTrack("1181138"),
+					new ExampleTrack("487885"),
+					new ExampleTrack("20505133"),
+					new ExampleTrack("1187217"),
+					new ExampleTrack("12345"),
+					new ExampleTrack("1231"),
 				};
 		}
 	}
