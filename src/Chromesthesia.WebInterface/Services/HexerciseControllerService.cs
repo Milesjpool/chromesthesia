@@ -2,9 +2,8 @@ using System.Drawing;
 using Chromesthesia.WebInterface.AcousticbrainzHelpers;
 using Chromesthesia.WebInterface.Models;
 using Chromesthesia.WebInterface.Parsing;
-using Chromesthesia.WebInterface.Services;
 
-namespace Chromesthesia.WebInterface.Controllers
+namespace Chromesthesia.WebInterface.Services
 {
 	public class HexerciseControllerService
 	{

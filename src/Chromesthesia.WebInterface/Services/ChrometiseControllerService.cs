@@ -2,6 +2,7 @@ using System.Drawing;
 using Chromesthesia.WebInterface.AcousticbrainzHelpers;
 using Chromesthesia.WebInterface.Chrometisation;
 using Chromesthesia.WebInterface.Models;
+using Chromesthesia.WebInterface.Parsing;
 
 namespace Chromesthesia.WebInterface.Services
 {

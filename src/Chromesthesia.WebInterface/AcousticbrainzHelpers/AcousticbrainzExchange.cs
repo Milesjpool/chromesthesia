@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using Chromesthesia.WebInterface.Exceptions;
 using Chromesthesia.WebInterface.HttpHelpers;
 using Chromesthesia.WebInterface.Interfaces;
 using Chromesthesia.WebInterface.Parsing;
@@ -30,7 +31,16 @@ namespace Chromesthesia.WebInterface.AcousticbrainzHelpers
 		private string Analysis(Mbid mbid, string level)
 		{
 			var url = new Uri(_acousticbrainzUrl, mbid + level);
-			return WebRequest.Create(url).GetResponse().Body();
+			try
+			{
+				return WebRequest.Create(url).GetResponse().Body();
+			}
+			catch (WebException e)
+			{
+				var status = e.Response.StatusCode();
+				if (status.Equals(HttpStatusCode.NotFound)) throw new NoDataForTrackException(mbid);
+				throw;
+			}
 		}
 
 		public string GetStatus()

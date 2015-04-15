@@ -1,6 +1,7 @@
 using Chromesthesia.WebInterface.AcousticbrainzHelpers;
 using Chromesthesia.WebInterface.Exceptions;
 using Chromesthesia.WebInterface.Models;
+using Chromesthesia.WebInterface.Parsing;
 
 namespace Chromesthesia.WebInterface.Services
 {
@@ -23,15 +24,8 @@ namespace Chromesthesia.WebInterface.Services
 
 		private string Analysis()
 		{
-			try
-			{
-				var mbid = _inputParser.GetMbid();
-				return new AcousticbrainzExchange().GetAnalysisOf(mbid).HighLevelJson;
-			}
-			catch (InvalidMusicbrainzIdException e)
-			{
-				return string.Format("'{0}' is not a valid Musicbrainz ID", e.Mbid);
-			}
+			var mbid = _inputParser.GetMbid();
+			return new AcousticbrainzExchange().GetAnalysisOf(mbid).HighLevelJson;
 		}
 	}
 }

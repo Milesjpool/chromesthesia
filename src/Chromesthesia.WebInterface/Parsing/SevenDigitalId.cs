@@ -31,9 +31,9 @@ namespace Chromesthesia.WebInterface.Parsing
 			{
 				var status = e.Response.StatusCode();
 				if (status.Equals(HttpStatusCode.BadRequest))
-					throw new Invalid7DigitalIdException();
+					throw new Invalid7DigitalIdException(_id);
 				if (status.Equals(HttpStatusCode.NotFound))
-					throw new MusicbrainzIdNotFoundException();
+					throw new MusicbrainzIdNotFoundException(_id);
 				throw;
 			}
 

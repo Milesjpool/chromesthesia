@@ -1,4 +1,6 @@
 using System.Web.Script.Serialization;
+using Chromesthesia.WebInterface.AcousticbrainzHelpers;
+using Chromesthesia.WebInterface.Exceptions;
 using Chromesthesia.WebInterface.Services;
 
 namespace Chromesthesia.WebInterface.Controllers
@@ -28,23 +30,44 @@ namespace Chromesthesia.WebInterface.Controllers
 
 		public dynamic Chrometise(dynamic parameters, bool newChrometiser)
 		{
-			var controllerService = new ChrometiseControllerService(parameters, newChrometiser);
-			var model = controllerService.GetChrometiseModel();
-			return _routes.View["Views/Chrometise.cshtml", model];
+			try
+			{
+				var controllerService = new ChrometiseControllerService(parameters, newChrometiser);
+				var model = controllerService.GetChrometiseModel();
+				return _routes.View["Views/Chrometise.cshtml", model];
+			}
+			catch (ChromesthesiaException e)
+			{
+				return e.DefaultModel;
+			}
 		}
 
 		public dynamic Hexercise(dynamic parameters)
 		{
-			var controllerService = new HexerciseControllerService(parameters);
-			var model = controllerService.GetHexerciseModel();
-			return new JavaScriptSerializer().Serialize(model);
+			try
+			{
+				var controllerService = new HexerciseControllerService(parameters);
+				var model = controllerService.GetHexerciseModel();
+				return new JavaScriptSerializer().Serialize(model);
+			}
+			catch (ChromesthesiaException e)
+			{
+				return e.DefaultModel;
+			}
 		}
 
 		public dynamic Analyse(dynamic parameters)
 		{
-			var controllerService = new AnalyseControllerService(parameters);
-			var model = controllerService.GetAnalyseModel();
-			return model.Analysis;
+			try
+			{
+				var controllerService = new AnalyseControllerService(parameters);
+				var model = controllerService.GetAnalyseModel();
+				return model.Analysis;
+			}
+			catch (ChromesthesiaException e)
+			{
+				return e.DefaultModel;
+			}
 		}
 
 		public dynamic Survey()

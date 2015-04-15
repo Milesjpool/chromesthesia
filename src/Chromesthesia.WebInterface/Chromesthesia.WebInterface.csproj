@@ -257,9 +257,11 @@
     <Compile Include="AcousticbrainzHelpers\AcousticbrainzExtensions.cs" />
     <Compile Include="AcousticbrainzHelpers\AcousticbrainzResult.cs" />
     <Compile Include="AcousticbrainzHelpers\Analysis.cs" />
+    <Compile Include="Exceptions\ChromesthesiaException.cs" />
+    <Compile Include="Exceptions\NoDataForTrackException.cs" />
     <Compile Include="Chrometisation\ColorHandling.cs" />
     <Compile Include="Chrometisation\AllDataColourCalculator.cs" />
-    <Compile Include="Chrometisation\IColourCalculator.cs" />
+    <Compile Include="Interfaces\IColourCalculator.cs" />
     <Compile Include="Chrometisation\MetadataAnalysis.cs" />
     <Compile Include="Chrometisation\WeightedColour.cs" />
     <Compile Include="Controllers\AppController.cs" />
@@ -306,7 +308,7 @@
     <Compile Include="Interfaces\IAcousticbrainzExchange.cs" />
     <Compile Include="Parsing\InputParser.cs" />
     <Compile Include="Parsing\Mbid.cs" />
-    <Compile Include="Services\PredominantPropertyColourCalculator.cs" />
+    <Compile Include="Chrometisation\PredominantPropertyColourCalculator.cs" />
     <Compile Include="Services\StatusControllerService.cs">
       <SubType>Code</SubType>
     </Compile>
