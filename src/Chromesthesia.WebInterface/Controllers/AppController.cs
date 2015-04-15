@@ -1,4 +1,5 @@
 using System.Web.Helpers;
+using System.Web.Script.Serialization;
 using Chromesthesia.WebInterface.Services;
 
 namespace Chromesthesia.WebInterface.Controllers
@@ -37,7 +38,7 @@ namespace Chromesthesia.WebInterface.Controllers
 		{
 			var controllerService = new HexerciseControllerService(parameters);
 			var model = controllerService.GetHexerciseModel();
-			return Json.Encode(model);
+			return new JavaScriptSerializer().Serialize(model);
 		}
 
 		public dynamic Analyse(dynamic parameters)

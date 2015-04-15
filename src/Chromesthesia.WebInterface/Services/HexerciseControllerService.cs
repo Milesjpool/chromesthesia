@@ -1,20 +1,22 @@
 using System.Drawing;
 using Chromesthesia.WebInterface.AcousticbrainzHelpers;
 using Chromesthesia.WebInterface.Models;
+using Chromesthesia.WebInterface.Parsing;
 using Chromesthesia.WebInterface.Services;
 
 namespace Chromesthesia.WebInterface.Controllers
 {
 	public class HexerciseControllerService
 	{
-		private readonly InputParser _inputParser;
+		private readonly Mbid _mbid;
 		private readonly Analysis _analysis;
 		private readonly PredominantPropertyColourCalculator _colourCalculator;
 		private Color _trackColour;
 
 		public HexerciseControllerService(dynamic parameters)
 		{
-			_inputParser = new InputParser(parameters);
+			var inputParser = new InputParser(parameters);
+			_mbid = inputParser.GetMbid();
 			_analysis = GetAcousticbrainzAnalysis();
 			_colourCalculator = new PredominantPropertyColourCalculator();
 			_trackColour = _colourCalculator.From(_analysis);
@@ -26,6 +28,7 @@ namespace Chromesthesia.WebInterface.Controllers
 				{
 					Artist = _analysis.metadata.tags.artist[0],
 					Track = _analysis.metadata.tags.title[0],
+					MusicbrainzId = _mbid.ToString(),
 					HtmlColour = HtmlColour(),
 					RgbColour = TrackColour()
 				};
@@ -43,8 +46,7 @@ namespace Chromesthesia.WebInterface.Controllers
 
 		private Analysis GetAcousticbrainzAnalysis()
 		{
-			var mbid = _inputParser.GetMbid();
-			return new AcousticbrainzExchange().GetAnalysisOf(mbid).Deserialize();
+			return new AcousticbrainzExchange().GetAnalysisOf(_mbid).Deserialize();
 		}
 
 		private static string ToHex(Color color)
